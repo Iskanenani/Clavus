@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import {
   Bar,
   BarChart,
@@ -74,6 +74,75 @@ function inBucket(
   return project.verdict === row.kind
 }
 
+type NamedRow = MapRow & { name: string }
+
+// One block of bars. The map draws one block per group (the strategy's
+// priorities, then the work outside them), and every block gets the same
+// `maxShare` so bar lengths can be compared across blocks.
+function EffortBars({
+  rows,
+  maxShare,
+  compact,
+  selected,
+  onSelect,
+}: {
+  rows: NamedRow[]
+  maxShare: number
+  compact: boolean
+  selected: string | null
+  onSelect: (bucket: string) => void
+}) {
+  return (
+    <ResponsiveContainer
+      width="100%"
+      height={rows.length * (compact ? 52 : 44) + 8}
+    >
+      <BarChart
+        data={rows}
+        layout="vertical"
+        margin={{
+          top: 0,
+          bottom: 0,
+          left: compact ? 0 : 8,
+          right: compact ? 42 : 56,
+        }}
+      >
+        <XAxis type="number" hide domain={[0, maxShare]} />
+        <YAxis
+          type="category"
+          dataKey="name"
+          width={compact ? 140 : 250}
+          tickLine={false}
+          axisLine={false}
+          tick={{ fontSize: compact ? 11 : 13, fill: '#1c1d1f' }}
+        />
+        <Bar
+          dataKey="share"
+          radius={4}
+          minPointSize={3}
+          isAnimationActive={false}
+          cursor="pointer"
+          onClick={(entry) => onSelect((entry as unknown as MapRow).bucket)}
+        >
+          {rows.map((row) => (
+            <Cell
+              key={row.bucket}
+              fill={COLORS[row.kind]}
+              opacity={selected && selected !== row.bucket ? 0.45 : 1}
+            />
+          ))}
+          <LabelList
+            dataKey="share"
+            position="right"
+            formatter={(value) => `${value}%`}
+            style={{ fontSize: compact ? 11 : 13, fill: '#1c1d1f' }}
+          />
+        </Bar>
+      </BarChart>
+    </ResponsiveContainer>
+  )
+}
+
 export function MapScreen({ goTo }: { goTo: GoTo }) {
   const [compact, setCompact] = useState(
     () => window.matchMedia('(max-width: 680px)').matches,
@@ -120,12 +189,39 @@ export function MapScreen({ goTo }: { goTo: GoTo }) {
   const notJudged = rows.find((row) => row.kind === 'not-judged')?.projects ?? 0
   const stale = projects.filter((p) => p.stale).length
   const selectedRow = rows.find((row) => row.bucket === bucket) ?? null
-  const chartRows = rows
-    .filter((row) => row.kind !== 'not-judged' || row.items > 0)
-    .map((row) => ({
-      ...row,
-      name: row.kind === 'priority' ? shortLabel(row.label) : row.label,
-    }))
+  // Priorities carry the same 01, 02… numbers as on the Strategy screen,
+  // so a reader recognises them as the strategy's own priorities.
+  const goals = priorities.filter((p) => p.kind === 'priority')
+  const named: NamedRow[] = rows.map((row) => {
+    if (row.kind !== 'priority') return { ...row, name: row.label }
+    const number = goals.findIndex((p) => p.slug === row.bucket) + 1
+    const prefix = number > 0 ? `${String(number).padStart(2, '0')} · ` : ''
+    return { ...row, name: prefix + shortLabel(row.label) }
+  })
+  const percent = (list: MapRow[]) =>
+    totalItems === 0
+      ? 0
+      : Math.round(
+          (list.reduce((sum, row) => sum + row.items, 0) / totalItems) * 100,
+        )
+  const onStrategy = named.filter((row) => row.kind === 'priority')
+  const offStrategy = named.filter(
+    (row) => row.kind !== 'priority' && row.kind !== 'not-judged',
+  )
+  const pending = named.filter((row) => row.kind === 'not-judged')
+  const groups = [
+    {
+      title: `Strategic priorities · ${percent(onStrategy)}% of the work`,
+      rows: onStrategy,
+    },
+    {
+      title: `Outside the strategy · ${percent(offStrategy)}% of the work`,
+      rows: offStrategy,
+    },
+    // "Not judged yet" belongs to neither side, so it gets no heading.
+    { title: null, rows: pending },
+  ]
+  const maxShare = Math.max(1, ...rows.map((row) => row.share))
   const opened = projects.find((p) => p.project === openProject) ?? null
 
   const projectList = (list: ProjectVerdict[]) =>
@@ -184,54 +280,46 @@ export function MapScreen({ goTo }: { goTo: GoTo }) {
       <div className="card stack">
         <p className="muted">
           Share of the {totalItems} work items{team ? ` of ${team}` : ''}, by
-          what their project is for. Click a bar to see its projects.
+          what their project is for. The numbered rows are the priorities set on
+          the Strategy screen. Click a bar to see its projects.
         </p>
+        <div className="map-summary">
+          <p>
+            <strong>{percent(onStrategy)}%</strong> of the work serves one of
+            the strategy’s {onStrategy.length} priorities.{' '}
+            <strong>{percent(offStrategy)}%</strong> does not.
+          </p>
+          <div className="map-split" aria-hidden="true">
+            {(['priority', 'none', 'contradicts', 'unclear'] as const).map(
+              (kind) => (
+                <span
+                  key={kind}
+                  style={{
+                    flexGrow: percent(rows.filter((row) => row.kind === kind)),
+                    background: COLORS[kind],
+                  }}
+                />
+              ),
+            )}
+          </div>
+        </div>
+
         <div className="scroll">
           <div className="chart-canvas">
-            <ResponsiveContainer
-              width="100%"
-              height={chartRows.length * (compact ? 52 : 44) + 20}
-            >
-              <BarChart
-                data={chartRows}
-                layout="vertical"
-                margin={{ left: compact ? 0 : 8, right: compact ? 42 : 56 }}
-              >
-                <XAxis type="number" hide domain={[0, 'dataMax']} />
-                <YAxis
-                  type="category"
-                  dataKey="name"
-                  width={compact ? 140 : 250}
-                  tickLine={false}
-                  axisLine={false}
-                  tick={{ fontSize: compact ? 11 : 13, fill: '#1c1d1f' }}
-                />
-                <Bar
-                  dataKey="share"
-                  radius={4}
-                  minPointSize={3}
-                  isAnimationActive={false}
-                  cursor="pointer"
-                  onClick={(entry) =>
-                    setBucket((entry as unknown as MapRow).bucket)
-                  }
-                >
-                  {chartRows.map((row) => (
-                    <Cell
-                      key={row.bucket}
-                      fill={COLORS[row.kind]}
-                      opacity={bucket && bucket !== row.bucket ? 0.45 : 1}
-                    />
-                  ))}
-                  <LabelList
-                    dataKey="share"
-                    position="right"
-                    formatter={(value) => `${value}%`}
-                    style={{ fontSize: compact ? 11 : 13, fill: '#1c1d1f' }}
+            {groups
+              .filter((group) => group.rows.some((row) => row.items > 0))
+              .map((group) => (
+                <div key={group.rows[0].kind} className="map-group">
+                  {group.title && <h3>{group.title}</h3>}
+                  <EffortBars
+                    rows={group.rows}
+                    maxShare={maxShare}
+                    compact={compact}
+                    selected={bucket}
+                    onSelect={setBucket}
                   />
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+                </div>
+              ))}
           </div>
         </div>
 
@@ -247,32 +335,41 @@ export function MapScreen({ goTo }: { goTo: GoTo }) {
               </tr>
             </thead>
             <tbody>
-              {rows.map((row) => (
-                <tr
-                  key={row.bucket}
-                  className={
-                    row.bucket === bucket ? 'clickable selected' : 'clickable'
-                  }
-                  onClick={() => setBucket(row.bucket)}
-                >
-                  <td>
-                    <span
-                      className="dot"
-                      style={{ background: COLORS[row.kind] }}
-                    />
-                    {row.kind === 'priority'
-                      ? shortLabel(row.label)
-                      : row.label}
-                  </td>
-                  <td className="num">{row.projects}</td>
-                  <td className="num">{row.items}</td>
-                  <td className="num">{row.share}%</td>
-                  {team && (
-                    <td className="num">
-                      {row.effort ?? 0} {row.effort_unit ?? ''}
-                    </td>
+              {groups.map((group) => (
+                <Fragment key={group.rows[0]?.kind ?? 'empty'}>
+                  {group.title && group.rows.length > 0 && (
+                    <tr className="group-row">
+                      <th colSpan={team ? 5 : 4}>{group.title}</th>
+                    </tr>
                   )}
-                </tr>
+                  {group.rows.map((row) => (
+                    <tr
+                      key={row.bucket}
+                      className={
+                        row.bucket === bucket
+                          ? 'clickable selected'
+                          : 'clickable'
+                      }
+                      onClick={() => setBucket(row.bucket)}
+                    >
+                      <td>
+                        <span
+                          className="dot"
+                          style={{ background: COLORS[row.kind] }}
+                        />
+                        {row.name}
+                      </td>
+                      <td className="num">{row.projects}</td>
+                      <td className="num">{row.items}</td>
+                      <td className="num">{row.share}%</td>
+                      {team && (
+                        <td className="num">
+                          {row.effort ?? 0} {row.effort_unit ?? ''}
+                        </td>
+                      )}
+                    </tr>
+                  ))}
+                </Fragment>
               ))}
             </tbody>
           </table>
