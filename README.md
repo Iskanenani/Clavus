@@ -55,14 +55,60 @@ Any tracker that can export its items (Jira, Asana, Linear and similar) can be m
 
 The prototype runs on synthetic data: a fictional company with one strategy and a set of work items containing planted mismatches. No real company data is used.
 
+## Run it locally
+
+You need [Node.js](https://nodejs.org) 22 or newer, and Docker (or Podman) for the local copy of Supabase.
+
+```sh
+git clone <this repository>
+cd Clavus
+npm install
+npx supabase start           # local Supabase; prints its URL and keys
+cp .env.example .env.local   # then fill in the values (see below)
+npm run db:setup             # creates the tables and loads the synthetic dataset
+npx supabase functions serve # leave running: this is the judging function
+npm run dev                  # in a second terminal; opens on http://localhost:5173
+```
+
+Log in with the `DEMO_USER_EMAIL` and `DEMO_USER_PASSWORD` you chose in `.env.local`.
+
+**What goes in `.env.local`:** `npx supabase start` prints `API_URL`, `ANON_KEY` and `SERVICE_ROLE_KEY`; they go in `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY`. For the hosted project, the same three values are in the Supabase dashboard under Project Settings > API.
+
+**On Fedora or another SELinux system**, containers cannot read your home folder by default and the judging function fails with "failed to determine entrypoint". Allow it once with `chcon -Rt container_file_t supabase/functions`.
+
+### Commands
+
+| Command | What it does |
+|---|---|
+| `npm run dev` | Runs the app locally |
+| `npm run build` | Type-checks and builds the static files into `dist/` |
+| `npm run lint` / `npm run format` | Checks the code for mistakes / formats it |
+| `npm run data` | Regenerates the synthetic dataset in `data/` |
+| `npm run db:setup` | Local only: recreates the tables, then loads the dataset |
+| `npm run db:seed` | Loads the dataset into the Supabase project named in `.env.local` |
+| `npm run judge` | Judges every project that needs it, like the queue in the app |
+| `npm run accuracy` | Compares stored verdicts with the answer key; writes `reports/accuracy.md` |
+| `npm run db:test-access` | Proves one company cannot read or change another's rows |
+| `npm run test:import` | Proves both sample CSV files map to the same items |
+| `npm run test:checks` | Proves the checks on model answers reject bad answers |
+
+### Putting it online
+
+These steps need the owner's accounts and have not been done yet.
+
+1. **Supabase:** create a project, then `npx supabase link`, `npx supabase db push` (tables), `npx supabase functions deploy judge-project` (judging), and `npm run db:seed` with the hosted values in `.env.local`.
+2. **Vercel:** import the GitHub repository and set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`. Vercel detects Vite by itself.
+3. **A real model, once chosen:** add it in `supabase/functions/_shared/model.ts` (the only file to change) and set `MODEL_PROVIDER` and `MODEL_API_KEY` with `npx supabase secrets set`.
+
 ## Status
 
 Early prototype, built for a student consulting project.
 
-- [ ] Synthetic strategy and work-item dataset
-- [ ] Import in the common format
-- [ ] Classification of projects against the strategy
-- [ ] Dashboard
-- [ ] Accuracy test against the planted mismatches
+- [x] Synthetic strategy and work-item dataset
+- [x] Import in the common format
+- [x] Classification of projects against the strategy (with the mock provider; no AI model chosen yet)
+- [x] Dashboard
+- [x] Accuracy test against the planted mismatches
+- [ ] Deployment to Vercel and a hosted Supabase project (needs the owner's accounts)
 - [ ] Ready-made mappings for common trackers (later)
 - [ ] Live connections to trackers (later)

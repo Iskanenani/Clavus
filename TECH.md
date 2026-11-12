@@ -13,9 +13,9 @@ Two constraints drove every choice: the prototype must run **entirely on free ti
 | Database and logins | Supabase (Postgres) | Hosted and always on, with authentication and per-table access rules built in. Nothing to deploy or maintain. |
 | Server code | Supabase Edge Functions | Keeps the AI key private and calls the model. Puts the whole back end in one place, so the host stays static. |
 | Counting | SQL in Supabase | The percentages on the map come from queries over stored verdicts, so they are exact and repeatable. |
-| File import | Parsed in the browser | Work items arrive as CSV. The user maps columns to the common format before anything is stored. |
-| Charts | A React chart library | For the effort map. |
-| AI model | **Not chosen yet** | See below. |
+| File import | Parsed in the browser with Papa Parse | Work items arrive as CSV. The user maps columns to the common format before anything is stored. |
+| Charts | Recharts | For the effort map. |
+| AI model | **Not chosen yet** | See below. Until then a mock provider answers from the answer key. |
 
 ## How the pieces connect
 
@@ -51,15 +51,47 @@ The model sits behind a single function. Switching provider means editing one fi
 5. **The model never counts.** Totals and percentages are computed in SQL.
 6. **Access rules on every table.** Each user sees only their own company's data.
 
-## Data model (first draft)
+## Data model
+
+Defined in `supabase/migrations/`. Every table has a `company_id` and an access rule that compares it with the company of the logged-in user.
 
 | Table | Holds |
 |---|---|
-| `strategies` | One strategy per company, with its text |
-| `priorities` | The priorities and "will not do" items of a strategy |
+| `companies` | One row per company. Added to the first draft: the access rules need something to compare against |
+| `members` | Which user belongs to which company |
+| `strategies` | One strategy per company, with its text and when it was validated |
+| `priorities` | The priorities and "will not do" items of a strategy, each with a short name |
 | `work_items` | Imported items in the common format, with their parent project |
-| `verdicts` | The model's judgement per project, with quote and reason |
-| `overrides` | Human corrections, with who made them and when |
+| `verdicts` | The model's judgement per project, with quote and reason, or the error if the answer failed the checks |
+| `overrides` | Human confirmations and corrections. Rows can be added and read, never edited or deleted |
+| `answer_key` | The expected verdicts of the synthetic dataset. Read only by the mock provider on the server; the browser has no access |
+
+Three things are computed, not stored:
+
+| Name | What it gives |
+|---|---|
+| `project_summary` (view) | Work items grouped into projects, with item count, effort and a fingerprint of the items |
+| `project_verdicts` (view) | Each project with the verdict in force: the newest override if there is one, otherwise the model's |
+| `effort_map()` (function) | The rows of the map: projects, items and share per priority, plus "no priority", "contradicts", "unclear" and "not judged" |
+
+How the rules in this document are enforced:
+
+- **Never judged twice:** a verdict stores the fingerprint of the project's items. The queue skips a project while the fingerprint still matches and the strategy has not changed.
+- **Out of date:** a database trigger withdraws the validation and flags every verdict when the strategy text or a priority changes. It lives in the database so that no screen can forget to do it.
+- **Reset demo:** the synthetic dataset is kept in a template company with no members. Resetting copies it over the demo company (`reset_demo()`).
+- **Effort units:** stored per work item, because the synthetic teams use different units. The import screen asks for the unit once per file.
+
+## Where the code is
+
+| Path | What |
+|---|---|
+| `src/screens/` | One file per screen: strategy, import, judge, map, project panel, review log |
+| `src/lib/csv.ts` | Mapping a tracker's columns to the common format |
+| `supabase/migrations/` | Tables, access rules, triggers and the SQL behind the map |
+| `supabase/functions/judge-project/` | Judges one project and stores the verdict |
+| `supabase/functions/_shared/verdict.ts` | The prompt, and the checks every model answer must pass |
+| `supabase/functions/_shared/model.ts` | The model adapter and the mock provider. **The one file to edit when a model is chosen** |
+| `scripts/` | Dataset generator, seed, accuracy report and the tests |
 
 ## Alternatives considered
 

@@ -1,0 +1,495 @@
+Issue Key,State,Epic Name,Summary,Squad,Estimate,Details
+TES-1,In progress,German checkout flow,Translate checkout into German,Product Engineering,2,"All checkout screens, error messages and receipts in German for merchants in Germany."
+TES-2,Done,German checkout flow,Add SEPA direct debit,Product Engineering,8,German shoppers pay by direct debit far more often than by card.
+TES-3,Done,German checkout flow,Add purchase on invoice,Product Engineering,1,Kauf auf Rechnung is expected by German online shoppers.
+TES-4,Done,German checkout flow,Show prices with German VAT,Product Engineering,5,Display 19% and 7% VAT rates correctly on receipts.
+TES-5,Done,German checkout flow,Test checkout with five German pilot merchants,Product Engineering,1,Pilot shops in Cologne and Leipzig.
+TES-6,Done,German checkout flow,Add automated tests,Product Engineering,2,
+TES-7,In progress,German checkout flow,Update runbook,Product Engineering,8,
+TES-8,Done,German checkout flow,Fix bugs found in QA,Product Engineering,1,
+TES-9,To do,German checkout flow,Write technical design note,Product Engineering,2,
+TES-10,In progress,French e-invoicing compliance,Support Factur-X invoice format,Product Engineering,2,Mandatory electronic invoice format for businesses in France.
+TES-11,Done,French e-invoicing compliance,Connect to the French invoicing platform,Product Engineering,8,Invoices must be transmitted through a registered platform.
+TES-12,Done,French e-invoicing compliance,French VAT rates and mentions,Product Engineering,8,TVA rates and the legal mentions required on French invoices.
+TES-13,Done,French e-invoicing compliance,Legal review with French counsel,Product Engineering,1,Confirm the product meets the mandate before launch in France.
+TES-14,In progress,French e-invoicing compliance,Sprint demo,Product Engineering,5,
+TES-15,To do,French e-invoicing compliance,Update runbook,Product Engineering,2,
+TES-16,In progress,French e-invoicing compliance,Code review fixes,Product Engineering,5,
+TES-17,Done,French e-invoicing compliance,Add automated tests,Product Engineering,2,
+TES-18,Done,French e-invoicing compliance,Release and rollout,Product Engineering,8,Gradual rollout behind a feature flag.
+TES-19,To do,Germany launch campaign,German landing pages,Marketing,8,"Product pages written for German bakeries, salons and bike shops."
+TES-20,In progress,Germany launch campaign,Search ads in Germany,Marketing,12,Paid search for German small-business payment keywords.
+TES-21,In progress,Germany launch campaign,Trade fair stand at EuroShop Düsseldorf,Marketing,6,Meet German retailers in person.
+TES-22,To do,Germany launch campaign,German customer stories,Marketing,12,Film two early German merchants.
+TES-23,In progress,Germany launch campaign,Local press outreach,Marketing,8,Pitch German retail trade magazines.
+TES-24,Done,Germany launch campaign,Write final report,Marketing,16,
+TES-25,Done,Germany launch campaign,Weekly status update,Marketing,2,
+TES-26,To do,Germany launch campaign,Stakeholder review,Marketing,2,
+TES-27,Done,Germany launch campaign,Kickoff meeting,Marketing,16,
+TES-28,Done,Germany launch campaign,Agree timeline,Marketing,4,
+TES-29,In progress,Paris sales office,Hire four French account executives,Sales and Partnerships,16,Native speakers who will sell to independent retailers in France.
+TES-30,Done,Paris sales office,Lease office space in Paris,Sales and Partnerships,16,
+TES-31,In progress,Paris sales office,French sales contracts,Sales and Partnerships,8,Standard merchant agreement under French law.
+TES-32,To do,Paris sales office,Set France new-merchant targets,Sales and Partnerships,2,Quarterly targets for merchants signed in France.
+TES-33,To do,Paris sales office,Budget sign-off,Sales and Partnerships,16,
+TES-34,Done,Paris sales office,Agree timeline,Sales and Partnerships,12,
+TES-35,To do,Paris sales office,Write final report,Sales and Partnerships,16,
+TES-36,Done,Paris sales office,Kickoff meeting,Sales and Partnerships,6,
+TES-37,Done,DATEV export for German bookkeeping,Export transactions in DATEV format,Product Engineering,3,The format nearly all German tax advisers use.
+TES-38,Done,DATEV export for German bookkeeping,Map Tessel accounts to German chart of accounts,Product Engineering,1,SKR03 and SKR04.
+TES-39,To do,DATEV export for German bookkeeping,Validate exports with a German tax adviser,Product Engineering,8,
+TES-40,Done,DATEV export for German bookkeeping,German help article for the export,Product Engineering,2,
+TES-41,To do,DATEV export for German bookkeeping,Code review fixes,Product Engineering,5,
+TES-42,In progress,DATEV export for German bookkeeping,Fix bugs found in QA,Product Engineering,1,
+TES-43,Done,DATEV export for German bookkeeping,Sprint demo,Product Engineering,8,
+TES-44,Done,Payment gateway failover,Run the gateway in a second region,Payments Engineering,2,So payments continue if the first region goes down.
+TES-45,To do,Payment gateway failover,Automatic traffic switch on failure,Payments Engineering,1,Switch within 30 seconds with no manual step.
+TES-46,Done,Payment gateway failover,Replicate transaction state between regions,Payments Engineering,2,
+TES-47,Done,Payment gateway failover,Failover rehearsal in production,Payments Engineering,2,Prove the 99.95% availability target can be met.
+TES-48,To do,Payment gateway failover,Alert when regions drift out of sync,Payments Engineering,8,
+TES-49,In progress,Payment gateway failover,Write technical design note,Payments Engineering,5,
+TES-50,Done,Payment gateway failover,Update runbook,Payments Engineering,2,
+TES-51,Done,Payment gateway failover,Fix bugs found in QA,Payments Engineering,3,
+TES-52,Done,Payment gateway failover,Code review fixes,Payments Engineering,1,
+TES-53,Done,Payments on-call and incident response,Set up a 24/7 on-call rota for payments,Payments Engineering,1,An engineer reachable within five minutes at any hour.
+TES-54,Done,Payments on-call and incident response,Define payment availability alerts,Payments Engineering,8,Page when card or online payment success rate drops.
+TES-55,Done,Payments on-call and incident response,Write incident playbooks,Payments Engineering,2,Step-by-step recovery for the ten most likely payment failures.
+TES-56,In progress,Payments on-call and incident response,Post-incident review process,Payments Engineering,3,Every outage gets a written review and follow-up actions.
+TES-57,Done,Payments on-call and incident response,Write technical design note,Payments Engineering,8,
+TES-58,In progress,Payments on-call and incident response,Fix bugs found in QA,Payments Engineering,3,
+TES-59,To do,Payments on-call and incident response,Sprint demo,Payments Engineering,5,
+TES-60,Done,Payments on-call and incident response,Code review fixes,Payments Engineering,3,
+TES-61,In progress,Payments on-call and incident response,Add automated tests,Payments Engineering,5,
+TES-62,Done,Offline card payments,Store card payments when the connection drops,Payments Engineering,1,The terminal app accepts the card and submits it later.
+TES-63,Done,Offline card payments,Risk limits for offline payments,Payments Engineering,2,Cap the amount accepted without authorisation.
+TES-64,Done,Offline card payments,Automatic submission when back online,Payments Engineering,3,
+TES-65,Done,Offline card payments,Merchant setting to enable offline mode,Payments Engineering,1,
+TES-66,In progress,Offline card payments,Field test in shops with poor connectivity,Payments Engineering,2,Market stalls and basement shops lose sales today.
+TES-67,Done,Offline card payments,Add automated tests,Payments Engineering,5,
+TES-68,Done,Offline card payments,Release and rollout,Payments Engineering,1,Gradual rollout behind a feature flag.
+TES-69,To do,Offline card payments,Update runbook,Payments Engineering,8,
+TES-70,Done,Zero-downtime ledger migration,Move the payments ledger to the new database cluster,Payments Engineering,3,The current database causes most of our payment outages.
+TES-71,Done,Zero-downtime ledger migration,Dual-write during migration,Payments Engineering,8,No payment downtime during the move.
+TES-72,In progress,Zero-downtime ledger migration,Verify every balance after cutover,Payments Engineering,3,
+TES-73,To do,Zero-downtime ledger migration,Rollback plan,Payments Engineering,5,Return to the old cluster within minutes if payments fail.
+TES-74,To do,Zero-downtime ledger migration,Update runbook,Payments Engineering,1,
+TES-75,Done,Zero-downtime ledger migration,Code review fixes,Payments Engineering,1,
+TES-76,Done,Zero-downtime ledger migration,Add automated tests,Payments Engineering,2,
+TES-77,Done,Zero-downtime ledger migration,Release and rollout,Payments Engineering,1,Gradual rollout behind a feature flag.
+TES-78,Done,Zero-downtime ledger migration,Sprint demo,Payments Engineering,2,
+TES-79,Done,Peak season load testing,Simulate December peak payment volume,Payments Engineering,1,Three times the highest volume seen so far.
+TES-80,Done,Peak season load testing,Find and fix bottlenecks in card authorisation,Payments Engineering,2,
+TES-81,In progress,Peak season load testing,Capacity plan for peak trading days,Payments Engineering,3,Payments must stay available on the busiest days of the year.
+TES-82,Done,Peak season load testing,Automate the load test,Payments Engineering,8,Run it before every major release.
+TES-83,Done,Peak season load testing,Add automated tests,Payments Engineering,3,
+TES-84,To do,Peak season load testing,Write technical design note,Payments Engineering,5,
+TES-85,In progress,Peak season load testing,Update runbook,Payments Engineering,8,
+TES-86,In progress,Peak season load testing,Code review fixes,Payments Engineering,2,
+TES-87,Done,Peak season load testing,Fix bugs found in QA,Payments Engineering,5,
+TES-88,In progress,Self-service signup,Online signup form,Product Engineering,3,A merchant creates an account without contacting sales.
+TES-89,In progress,Self-service signup,Company lookup from business registers,Product Engineering,3,Fill in company details automatically.
+TES-90,Done,Self-service signup,Choose a plan and accept terms online,Product Engineering,8,No sales call or paper contract.
+TES-91,In progress,Self-service signup,Measure signup completion,Product Engineering,2,Share of merchants who finish signup without staff help.
+TES-92,Done,Self-service signup,Update runbook,Product Engineering,8,
+TES-93,In progress,Self-service signup,Release and rollout,Product Engineering,8,Gradual rollout behind a feature flag.
+TES-94,Done,Self-service signup,Write technical design note,Product Engineering,1,
+TES-95,In progress,Self-service signup,Sprint demo,Product Engineering,8,
+TES-96,To do,Self-service signup,Add automated tests,Product Engineering,8,
+TES-97,In progress,Automated identity checks,Automated ID document verification,Payments Engineering,2,Replace the manual review by our compliance staff.
+TES-98,To do,Automated identity checks,Instant bank account verification,Payments Engineering,3,
+TES-99,Done,Automated identity checks,Decision in under five minutes for standard cases,Payments Engineering,2,So a new merchant can take a first payment the same day without staff.
+TES-100,To do,Automated identity checks,Queue only exceptions for manual review,Payments Engineering,5,
+TES-101,Done,Automated identity checks,Audit trail for the regulator,Payments Engineering,5,
+TES-102,Done,Automated identity checks,Sprint demo,Payments Engineering,3,
+TES-103,Done,Automated identity checks,Code review fixes,Payments Engineering,3,
+TES-104,In progress,Automated identity checks,Add automated tests,Payments Engineering,8,
+TES-105,In progress,Automated identity checks,Update runbook,Payments Engineering,5,
+TES-106,Done,Automated identity checks,Write technical design note,Payments Engineering,8,
+TES-107,To do,In-app setup guide,Step-by-step setup checklist in the app,Product Engineering,8,Guides a new merchant from account to first payment.
+TES-108,Done,In-app setup guide,Test payment walkthrough,Product Engineering,8,The merchant takes a 1 euro test payment by themselves.
+TES-109,In progress,In-app setup guide,Setup progress reminders by email,Product Engineering,1,
+TES-110,Done,In-app setup guide,Remove the mandatory setup call,Product Engineering,2,Setup should not require talking to staff.
+TES-111,Done,In-app setup guide,Sprint demo,Product Engineering,3,
+TES-112,Done,In-app setup guide,Fix bugs found in QA,Product Engineering,3,
+TES-113,In progress,In-app setup guide,Update runbook,Product Engineering,8,
+TES-114,In progress,In-app setup guide,Add automated tests,Product Engineering,2,
+TES-115,To do,Help centre rewrite,Rewrite the 50 most-read help articles,Customer Success,16,"In plain language, with screenshots."
+TES-116,Done,Help centre rewrite,Setup articles for each shop type,Customer Success,6,So merchants can set up without calling us.
+TES-117,Done,Help centre rewrite,Search inside the help centre,Customer Success,16,
+TES-118,Done,Help centre rewrite,Measure which articles fail to answer,Customer Success,6,
+TES-119,Done,Help centre rewrite,Weekly status update,Customer Success,6,
+TES-120,Done,Help centre rewrite,Collect feedback,Customer Success,8,
+TES-121,Done,Help centre rewrite,Stakeholder review,Customer Success,2,
+TES-122,To do,Video tutorials for new merchants,Record a two-minute video for each setup step,Marketing,8,"Sign up, connect bank, take a first payment."
+TES-123,In progress,Video tutorials for new merchants,Embed videos in the setup guide,Marketing,2,
+TES-124,Done,Video tutorials for new merchants,"Subtitles in Dutch, English, German and French",Marketing,8,
+TES-125,Done,Video tutorials for new merchants,Track whether viewers finish setup unaided,Marketing,2,
+TES-126,In progress,Video tutorials for new merchants,Stakeholder review,Marketing,16,
+TES-127,Done,Video tutorials for new merchants,Weekly status update,Marketing,6,
+TES-128,In progress,Video tutorials for new merchants,Budget sign-off,Marketing,12,
+TES-129,In progress,Video tutorials for new merchants,Agree timeline,Marketing,16,
+TES-130,To do,Accountant partner portal,Partner login for accountants,Product Engineering,5,One login to see all the merchants they advise.
+TES-131,In progress,Accountant partner portal,Invite a client to Tessel from the portal,Product Engineering,2,The accountant starts the merchant signup.
+TES-132,Done,Accountant partner portal,Read-only access to client books,Product Engineering,3,
+TES-133,To do,Accountant partner portal,Dashboard of merchants referred,Product Engineering,1,Shows each partner how many merchants they have brought.
+TES-134,Done,Accountant partner portal,Partner onboarding flow,Product Engineering,2,
+TES-135,Done,Accountant partner portal,Fix bugs found in QA,Product Engineering,3,
+TES-136,In progress,Accountant partner portal,Write technical design note,Product Engineering,2,
+TES-137,In progress,Accountant partner portal,Add automated tests,Product Engineering,3,
+TES-138,Done,Accountant partner portal,Code review fixes,Product Engineering,1,
+TES-139,To do,Accountant partner portal,Release and rollout,Product Engineering,8,Gradual rollout behind a feature flag.
+TES-140,Done,Reseller commission programme,Design commission tiers for resellers,Sales and Partnerships,8,Pay per active merchant brought in.
+TES-141,Done,Reseller commission programme,Reseller agreement template,Sales and Partnerships,2,
+TES-142,To do,Reseller commission programme,Track merchants by referring partner,Sales and Partnerships,12,Needed to pay commission and measure the share of merchants from partners.
+TES-143,Done,Reseller commission programme,Monthly commission payouts,Sales and Partnerships,12,
+TES-144,Done,Reseller commission programme,Weekly status update,Sales and Partnerships,16,
+TES-145,Done,Reseller commission programme,Agree timeline,Sales and Partnerships,6,
+TES-146,In progress,Reseller commission programme,Write final report,Sales and Partnerships,2,
+TES-147,To do,Reseller commission programme,Budget sign-off,Sales and Partnerships,6,
+TES-148,In progress,Partner recruitment roadshow,Events for accounting firms in eight cities,Sales and Partnerships,4,Present Tessel to firms that advise small retailers.
+TES-149,Done,Partner recruitment roadshow,Target list of 300 accounting firms,Sales and Partnerships,12,
+TES-150,Done,Partner recruitment roadshow,Sign partner agreements at the events,Sales and Partnerships,6,
+TES-151,Done,Partner recruitment roadshow,Follow-up calls with attendees,Sales and Partnerships,16,
+TES-152,Done,Partner recruitment roadshow,Collect feedback,Sales and Partnerships,6,
+TES-153,Done,Partner recruitment roadshow,Weekly status update,Sales and Partnerships,2,
+TES-154,In progress,Partner recruitment roadshow,Kickoff meeting,Sales and Partnerships,2,
+TES-155,Done,Partner recruitment roadshow,Stakeholder review,Sales and Partnerships,16,
+TES-156,To do,Partner recruitment roadshow,Write final report,Sales and Partnerships,16,
+TES-157,In progress,Co-branded partner marketing kit,Brochure template with partner logo,Marketing,12,For accountants and resellers to hand to their clients.
+TES-158,Done,Co-branded partner marketing kit,Partner email templates,Marketing,12,
+TES-159,Done,Co-branded partner marketing kit,Slide deck for resellers,Marketing,16,How to explain Tessel to a small retailer.
+TES-160,Done,Co-branded partner marketing kit,Partner section on the website,Marketing,2,
+TES-161,To do,Co-branded partner marketing kit,Budget sign-off,Marketing,12,
+TES-162,Done,Co-branded partner marketing kit,Kickoff meeting,Marketing,8,
+TES-163,Done,Co-branded partner marketing kit,Weekly status update,Marketing,16,
+TES-164,To do,First-year merchant health score,Score each merchant on risk of leaving,Customer Success,8,"Based on payment volume, logins and support contacts in the first year."
+TES-165,In progress,First-year merchant health score,Weekly list of at-risk merchants,Customer Success,6,
+TES-166,Done,First-year merchant health score,Playbook for contacting at-risk merchants,Customer Success,16,
+TES-167,To do,First-year merchant health score,Report first-year churn monthly,Customer Success,2,Track progress from 24% towards 12%.
+TES-168,Done,First-year merchant health score,Budget sign-off,Customer Success,6,
+TES-169,Done,First-year merchant health score,Agree timeline,Customer Success,2,
+TES-170,In progress,First-year merchant health score,Stakeholder review,Customer Success,2,
+TES-171,To do,First-year merchant health score,Weekly status update,Customer Success,4,
+TES-172,To do,First-year merchant health score,Kickoff meeting,Customer Success,16,
+TES-173,To do,Cancellation save flow,Ask for the reason when a merchant cancels,Product Engineering,2,
+TES-174,Done,Cancellation save flow,Offer a fix matched to the reason,Product Engineering,8,For example a cheaper plan or a pause instead of leaving.
+TES-175,Done,Cancellation save flow,Pause account option,Product Engineering,2,
+TES-176,To do,Cancellation save flow,Report of merchants kept by the flow,Product Engineering,8,Counts towards the first-year churn target.
+TES-177,Done,Cancellation save flow,Add automated tests,Product Engineering,2,
+TES-178,To do,Cancellation save flow,Release and rollout,Product Engineering,1,Gradual rollout behind a feature flag.
+TES-179,Done,Cancellation save flow,Fix bugs found in QA,Product Engineering,8,
+TES-180,Done,Cancellation save flow,Update runbook,Product Engineering,2,
+TES-181,Done,Cancellation save flow,Sprint demo,Product Engineering,3,
+TES-182,Done,First-year check-in programme,"Check in with every merchant at 30, 90 and 180 days",Customer Success,8,Most merchants who leave do so in their first year.
+TES-183,Done,First-year check-in programme,Check-in script and survey,Customer Success,6,
+TES-184,In progress,First-year check-in programme,Route problems found to the right team,Customer Success,8,
+TES-185,To do,First-year check-in programme,Compare churn of contacted and uncontacted merchants,Customer Success,8,
+TES-186,In progress,First-year check-in programme,Budget sign-off,Customer Success,16,
+TES-187,In progress,First-year check-in programme,Stakeholder review,Customer Success,2,
+TES-188,Done,First-year check-in programme,Weekly status update,Customer Success,4,
+TES-189,Done,First-year check-in programme,Agree timeline,Customer Success,16,
+TES-190,In progress,Project Rhine,Recruit account managers in Munich and Hamburg,Sales and Partnerships,16,Six people who will visit local independent shops.
+TES-191,Done,Project Rhine,Rent co-working desks in both cities,Sales and Partnerships,6,
+TES-192,In progress,Project Rhine,Standard merchant agreement under local law,Sales and Partnerships,12,Reviewed by a Frankfurt law firm.
+TES-193,To do,Project Rhine,First 200 shop visits,Sales and Partnerships,6,Bakeries and bike shops in Bavaria and the north.
+TES-194,Done,Project Rhine,Local-language sales training,Sales and Partnerships,12,
+TES-195,In progress,Project Rhine,Weekly status update,Sales and Partnerships,8,
+TES-196,Done,Project Rhine,Agree timeline,Sales and Partnerships,12,
+TES-197,Done,Project Rhine,Kickoff meeting,Sales and Partnerships,8,
+TES-198,To do,Project Rhine,Budget sign-off,Sales and Partnerships,12,
+TES-199,Done,Project Marianne,Translate the merchant app for the Lyon pilot,Product Engineering,3,"Every screen, including receipts and error messages."
+TES-200,To do,Project Marianne,Support Cartes Bancaires,Product Engineering,5,The domestic card scheme most shoppers there use.
+TES-201,In progress,Project Marianne,Hire support agents who speak the language,Product Engineering,2,Based in Lille.
+TES-202,Done,Project Marianne,Pilot with 40 shops in Lyon and Marseille,Product Engineering,1,
+TES-203,Done,Project Marianne,Release and rollout,Product Engineering,2,Gradual rollout behind a feature flag.
+TES-204,To do,Project Marianne,Fix bugs found in QA,Product Engineering,2,
+TES-205,In progress,Project Marianne,Update runbook,Product Engineering,3,
+TES-206,To do,Project Marianne,Add automated tests,Product Engineering,3,
+TES-207,Done,Project Marianne,Write technical design note,Product Engineering,8,
+TES-208,Done,Second acquirer integration,Integrate a second acquiring bank,Payments Engineering,1,Today every card transaction goes through one bank.
+TES-209,In progress,Second acquirer integration,Route transactions to whichever bank is responding,Payments Engineering,3,"If one bank has an outage, shops keep trading."
+TES-210,To do,Second acquirer integration,Reconcile settlements from two banks,Payments Engineering,8,
+TES-211,In progress,Second acquirer integration,Contract and certification with the second bank,Payments Engineering,8,
+TES-212,To do,Second acquirer integration,Monitor approval rates per bank,Payments Engineering,1,
+TES-213,To do,Second acquirer integration,Release and rollout,Payments Engineering,3,Gradual rollout behind a feature flag.
+TES-214,Done,Second acquirer integration,Sprint demo,Payments Engineering,2,
+TES-215,To do,Second acquirer integration,Update runbook,Payments Engineering,2,
+TES-216,To do,Second acquirer integration,Code review fixes,Payments Engineering,3,
+TES-217,To do,Game days,Switch off one service on purpose each month,Payments Engineering,2,See whether shops can still take cards while it is down.
+TES-218,Done,Game days,Record what broke and how long recovery took,Payments Engineering,8,
+TES-219,In progress,Game days,Fix the weaknesses each exercise uncovers,Payments Engineering,8,
+TES-220,Done,Game days,Rehearse loss of the card authorisation service,Payments Engineering,2,
+TES-221,To do,Game days,Add automated tests,Payments Engineering,5,
+TES-222,Done,Game days,Write technical design note,Payments Engineering,2,
+TES-223,Done,Game days,Code review fixes,Payments Engineering,3,
+TES-224,Done,Game days,Fix bugs found in QA,Payments Engineering,3,
+TES-225,To do,Zero-touch activation,Activate accounts automatically after checks pass,Product Engineering,8,Today an operations agent presses a button for each new shop.
+TES-226,Done,Zero-touch activation,Connect the bank account through open banking,Product Engineering,5,Replaces emailing a bank statement to our team.
+TES-227,To do,Zero-touch activation,Ship the card reader pre-paired to the account,Product Engineering,5,It works when taken out of the box.
+TES-228,Done,Zero-touch activation,Remove the welcome call from the activation steps,Product Engineering,8,
+TES-229,To do,Zero-touch activation,Code review fixes,Product Engineering,2,
+TES-230,Done,Zero-touch activation,Fix bugs found in QA,Product Engineering,5,
+TES-231,Done,Zero-touch activation,Write technical design note,Product Engineering,2,
+TES-232,In progress,Top 20 contact reasons,List the 20 questions new shops phone us about most,Customer Success,4,From six months of call and chat logs.
+TES-233,To do,Top 20 contact reasons,Answer each question inside the product at the point it arises,Customer Success,2,For example explain payout timing on the payout screen.
+TES-234,Done,Top 20 contact reasons,Fix the three product defects behind the most calls,Customer Success,12,
+TES-235,Done,Top 20 contact reasons,Track calls per new shop in the first month,Customer Success,4,Target is under one.
+TES-236,In progress,Top 20 contact reasons,Collect feedback,Customer Success,6,
+TES-237,Done,Top 20 contact reasons,Write final report,Customer Success,4,
+TES-238,To do,Top 20 contact reasons,Weekly status update,Customer Success,2,
+TES-239,Done,Bookkeeper referral links,Personal referral link for each bookkeeper,Sales and Partnerships,16,Bookkeepers recommend tools to the shops whose books they keep.
+TES-240,Done,Bookkeeper referral links,Reward for each client who starts trading,Sales and Partnerships,12,
+TES-241,To do,Bookkeeper referral links,Recruit 500 freelance bookkeepers,Sales and Partnerships,12,Through bookkeeping associations.
+TES-242,Done,Bookkeeper referral links,Leaderboard of top referrers,Sales and Partnerships,8,
+TES-243,Done,Bookkeeper referral links,Kickoff meeting,Sales and Partnerships,8,
+TES-244,Done,Bookkeeper referral links,Write final report,Sales and Partnerships,2,
+TES-245,In progress,Bookkeeper referral links,Weekly status update,Sales and Partnerships,12,
+TES-246,In progress,Till installer API,Public API to create a merchant account,Product Engineering,8,Firms that install tills for small shops can set Tessel up for their customers.
+TES-247,In progress,Till installer API,API keys and sandbox for installers,Product Engineering,8,
+TES-248,In progress,Till installer API,Documentation and sample code,Product Engineering,3,
+TES-249,Done,Till installer API,Pilot with three till installation firms,Product Engineering,8,Each installs tills in several hundred shops a year.
+TES-250,Done,Till installer API,Report accounts created per installer,Product Engineering,1,
+TES-251,Done,Till installer API,Update runbook,Product Engineering,8,
+TES-252,To do,Till installer API,Release and rollout,Product Engineering,5,Gradual rollout behind a feature flag.
+TES-253,Done,Till installer API,Fix bugs found in QA,Product Engineering,8,
+TES-254,Done,Till installer API,Add automated tests,Product Engineering,3,
+TES-255,To do,Till installer API,Code review fixes,Product Engineering,2,
+TES-256,Done,Quiet account outreach,Detect shops whose payment volume has halved,Customer Success,2,In months three to nine after joining.
+TES-257,Done,Quiet account outreach,Call each one within a week,Customer Success,12,Ask what changed and whether they are trying a competitor.
+TES-258,Done,Quiet account outreach,Offer a fee review to shops considering a switch,Customer Success,16,
+TES-259,To do,Quiet account outreach,Record outcome of each call,Customer Success,6,
+TES-260,To do,Quiet account outreach,Weekly status update,Customer Success,4,
+TES-261,Done,Quiet account outreach,Agree timeline,Customer Success,4,
+TES-262,Done,Quiet account outreach,Write final report,Customer Success,2,
+TES-263,In progress,Quiet account outreach,Kickoff meeting,Customer Success,8,
+TES-264,Done,Quiet account outreach,Collect feedback,Customer Success,2,
+TES-265,Done,Fee transparency statements,Redesign the monthly statement,Product Engineering,3,Show every fee in one plain table.
+TES-266,To do,Fee transparency statements,Explain each fee in a sentence,Product Engineering,5,Exit surveys say surprise fees are the top reason shops close their account within months of joining.
+TES-267,In progress,Fee transparency statements,Fee estimate before a plan change,Product Engineering,2,
+TES-268,Done,Fee transparency statements,Survey shops on whether fees are now clear,Product Engineering,1,
+TES-269,Done,Fee transparency statements,Add automated tests,Product Engineering,8,
+TES-270,To do,Fee transparency statements,Write technical design note,Product Engineering,2,
+TES-271,In progress,Fee transparency statements,Update runbook,Product Engineering,2,
+TES-272,Done,Reliability: admin dashboard restyle,New colour palette for the internal admin dashboard,Product Engineering,5,Staff find the current grey theme dated.
+TES-273,In progress,Reliability: admin dashboard restyle,Replace icon set,Product Engineering,2,
+TES-274,Done,Reliability: admin dashboard restyle,Rounded corners and new fonts on admin tables,Product Engineering,2,
+TES-275,Done,Reliability: admin dashboard restyle,Collect staff opinions on the new look,Product Engineering,8,
+TES-276,In progress,Reliability: admin dashboard restyle,Sprint demo,Product Engineering,2,
+TES-277,To do,Reliability: admin dashboard restyle,Fix bugs found in QA,Product Engineering,8,
+TES-278,To do,Reliability: admin dashboard restyle,Code review fixes,Product Engineering,8,
+TES-279,Done,Reliability: admin dashboard restyle,Add automated tests,Product Engineering,1,
+TES-280,Done,Reliability: admin dashboard restyle,Update runbook,Product Engineering,8,
+TES-281,In progress,Germany expansion: Berlin team offsite,Book a venue in Berlin for the marketing team offsite,Marketing,4,Two days of team building for the Amsterdam marketing team.
+TES-282,In progress,Germany expansion: Berlin team offsite,Flights and hotel for 35 staff,Marketing,4,
+TES-283,In progress,Germany expansion: Berlin team offsite,Plan the boat trip and team dinner,Marketing,8,
+TES-284,In progress,Germany expansion: Berlin team offsite,Offsite photo album,Marketing,16,
+TES-285,In progress,Germany expansion: Berlin team offsite,Agree timeline,Marketing,4,
+TES-286,Done,Germany expansion: Berlin team offsite,Kickoff meeting,Marketing,16,
+TES-287,Done,Germany expansion: Berlin team offsite,Stakeholder review,Marketing,2,
+TES-288,In progress,Self-service: staff expense tool,Choose a self-service expense tool for employees,Sales and Partnerships,6,Staff currently email receipts to finance.
+TES-289,In progress,Self-service: staff expense tool,Import the sales team’s company cards,Sales and Partnerships,4,
+TES-290,Done,Self-service: staff expense tool,Train sales staff to file their own expenses,Sales and Partnerships,8,
+TES-291,To do,Self-service: staff expense tool,Switch off the old expense spreadsheet,Sales and Partnerships,12,
+TES-292,Done,Self-service: staff expense tool,Budget sign-off,Sales and Partnerships,6,
+TES-293,To do,Self-service: staff expense tool,Write final report,Sales and Partnerships,12,
+TES-294,In progress,Self-service: staff expense tool,Agree timeline,Sales and Partnerships,12,
+TES-295,Done,Retention: employee engagement survey,Survey support staff on job satisfaction,Customer Success,2,Staff turnover in the support team was high last year.
+TES-296,To do,Retention: employee engagement survey,Exit interviews with employees who resigned,Customer Success,12,
+TES-297,Done,Retention: employee engagement survey,Propose changes to shift patterns and pay bands,Customer Success,8,
+TES-298,To do,Retention: employee engagement survey,Present findings to HR,Customer Success,12,
+TES-299,Done,Retention: employee engagement survey,Stakeholder review,Customer Success,4,
+TES-300,Done,Retention: employee engagement survey,Agree timeline,Customer Success,4,
+TES-301,To do,Retention: employee engagement survey,Collect feedback,Customer Success,6,
+TES-302,Done,Retention: employee engagement survey,Budget sign-off,Customer Success,6,
+TES-303,Done,Retention: employee engagement survey,Write final report,Customer Success,6,
+TES-304,Done,Partner growth: annual sales kickoff,Book the hotel for the internal sales kickoff,Sales and Partnerships,6,Annual gathering of our own sales staff.
+TES-305,Done,Partner growth: annual sales kickoff,Invite a motivational speaker,Sales and Partnerships,12,
+TES-306,Done,Partner growth: annual sales kickoff,Sales awards ceremony,Sales and Partnerships,4,Prizes for last year’s top sellers.
+TES-307,In progress,Partner growth: annual sales kickoff,Kickoff theme and merchandise,Sales and Partnerships,12,
+TES-308,Done,Partner growth: annual sales kickoff,Budget sign-off,Sales and Partnerships,8,
+TES-309,In progress,Partner growth: annual sales kickoff,Collect feedback,Sales and Partnerships,12,
+TES-310,Done,Partner growth: annual sales kickoff,Weekly status update,Sales and Partnerships,16,
+TES-311,To do,Partner growth: annual sales kickoff,Write final report,Sales and Partnerships,4,
+TES-312,Done,Partner growth: annual sales kickoff,Kickoff meeting,Sales and Partnerships,6,
+TES-313,In progress,France launch: Québec pilot,Sign up 50 French-speaking shops in Montréal,Sales and Partnerships,4,Reuse the French translation to sell in Québec.
+TES-314,Done,France launch: Québec pilot,Support Canadian dollars and Interac,Sales and Partnerships,2,
+TES-315,In progress,France launch: Québec pilot,Register a Canadian entity,Sales and Partnerships,8,
+TES-316,In progress,France launch: Québec pilot,Hire a sales contractor in Montréal,Sales and Partnerships,6,
+TES-317,Done,France launch: Québec pilot,Budget sign-off,Sales and Partnerships,6,
+TES-318,To do,France launch: Québec pilot,Collect feedback,Sales and Partnerships,16,
+TES-319,Done,France launch: Québec pilot,Kickoff meeting,Sales and Partnerships,16,
+TES-320,Done,France launch: Québec pilot,Write final report,Sales and Partnerships,16,
+TES-321,Done,Headquarters move,Plan the move to the new Amsterdam office,Customer Success,4,The current lease ends in March.
+TES-322,To do,Headquarters move,Seating plan for the support floor,Customer Success,4,
+TES-323,To do,Headquarters move,Move phone system and headsets,Customer Success,8,
+TES-324,In progress,Headquarters move,Order desks and chairs,Customer Success,6,
+TES-325,In progress,Headquarters move,Write final report,Customer Success,16,
+TES-326,In progress,Headquarters move,Agree timeline,Customer Success,16,
+TES-327,In progress,Headquarters move,Stakeholder review,Customer Success,12,
+TES-328,In progress,Build system migration,Move code builds to the new build system,Product Engineering,1,Builds take 25 minutes and engineers want them faster.
+TES-329,In progress,Build system migration,Migrate 140 build scripts,Product Engineering,5,
+TES-330,Done,Build system migration,Cache dependencies between builds,Product Engineering,5,
+TES-331,Done,Build system migration,Retire the old build servers,Product Engineering,5,
+TES-332,Done,Build system migration,Release and rollout,Product Engineering,8,Gradual rollout behind a feature flag.
+TES-333,In progress,Build system migration,Write technical design note,Product Engineering,2,
+TES-334,Done,Build system migration,Fix bugs found in QA,Product Engineering,3,
+TES-335,Done,Build system migration,Code review fixes,Product Engineering,3,
+TES-336,In progress,Dark mode for the merchant app,Dark colour theme for the merchant app,Product Engineering,5,Requested by a few merchants on the feedback forum.
+TES-337,In progress,Dark mode for the merchant app,Theme switch in settings,Product Engineering,8,
+TES-338,Done,Dark mode for the merchant app,Check contrast of all screens in dark mode,Product Engineering,2,
+TES-339,To do,Dark mode for the merchant app,Dark versions of charts,Product Engineering,5,
+TES-340,To do,Dark mode for the merchant app,Sprint demo,Product Engineering,2,
+TES-341,In progress,Dark mode for the merchant app,Write technical design note,Product Engineering,3,
+TES-342,To do,Dark mode for the merchant app,Update runbook,Product Engineering,8,
+TES-343,To do,Dark mode for the merchant app,Add automated tests,Product Engineering,3,
+TES-344,To do,Brand refresh,Commission a new logo,Marketing,2,The current logo is eight years old.
+TES-345,In progress,Brand refresh,New brand colours and typeface,Marketing,2,
+TES-346,To do,Brand refresh,Update templates and stationery,Marketing,4,
+TES-347,Done,Brand refresh,Brand guidelines document,Marketing,12,
+TES-348,Done,Brand refresh,Replace signage in the office,Marketing,2,
+TES-349,Done,Brand refresh,Budget sign-off,Marketing,12,
+TES-350,To do,Brand refresh,Collect feedback,Marketing,16,
+TES-351,To do,Brand refresh,Kickoff meeting,Marketing,12,
+TES-352,Done,Industry awards submissions,Enter three fintech awards,Marketing,6,
+TES-353,Done,Industry awards submissions,Write award submissions,Marketing,4,
+TES-354,To do,Industry awards submissions,Book a table at the awards dinner,Marketing,8,
+TES-355,In progress,Industry awards submissions,Press release if shortlisted,Marketing,6,
+TES-356,In progress,Industry awards submissions,Budget sign-off,Marketing,12,
+TES-357,In progress,Industry awards submissions,Weekly status update,Marketing,16,
+TES-358,In progress,Industry awards submissions,Stakeholder review,Marketing,2,
+TES-359,To do,Industry awards submissions,Kickoff meeting,Marketing,6,
+TES-360,To do,Industry awards submissions,Write final report,Marketing,8,
+TES-361,Done,Sales compensation redesign,Review base and bonus split for our sales staff,Sales and Partnerships,8,The plan has not changed in four years.
+TES-362,Done,Sales compensation redesign,Benchmark pay against other software firms,Sales and Partnerships,2,
+TES-363,Done,Sales compensation redesign,Model the cost of three options,Sales and Partnerships,16,
+TES-364,To do,Sales compensation redesign,Present the new plan to the board,Sales and Partnerships,4,
+TES-365,Done,Sales compensation redesign,Kickoff meeting,Sales and Partnerships,12,
+TES-366,In progress,Sales compensation redesign,Weekly status update,Sales and Partnerships,16,
+TES-367,Done,Sales compensation redesign,Collect feedback,Sales and Partnerships,4,
+TES-368,To do,Staff single sign-on,One login for all internal staff tools,Payments Engineering,2,Employees juggle eleven passwords.
+TES-369,Done,Staff single sign-on,Connect internal tools to the identity provider,Payments Engineering,8,
+TES-370,In progress,Staff single sign-on,Require two-factor login for employees,Payments Engineering,5,
+TES-371,In progress,Staff single sign-on,Remove shared team passwords,Payments Engineering,3,
+TES-372,To do,Staff single sign-on,Add automated tests,Payments Engineering,2,
+TES-373,Done,Staff single sign-on,Fix bugs found in QA,Payments Engineering,8,
+TES-374,Done,Staff single sign-on,Sprint demo,Payments Engineering,1,
+TES-375,Done,Crypto payments exploration,Research accepting stablecoin payments,Payments Engineering,1,An engineer proposed it at the last hackathon.
+TES-376,To do,Crypto payments exploration,Prototype with one crypto payment provider,Payments Engineering,8,
+TES-377,Done,Crypto payments exploration,Summarise regulatory position,Payments Engineering,5,
+TES-378,In progress,Crypto payments exploration,Demo to the product team,Payments Engineering,2,
+TES-379,Done,Crypto payments exploration,Fix bugs found in QA,Payments Engineering,3,
+TES-380,In progress,Crypto payments exploration,Sprint demo,Payments Engineering,5,
+TES-381,In progress,Crypto payments exploration,Write technical design note,Payments Engineering,8,
+TES-382,Done,Crypto payments exploration,Code review fixes,Payments Engineering,2,
+TES-383,To do,Podcast sponsorship,Sponsor a UK small-business podcast for a season,Marketing,4,General brand awareness in our existing market.
+TES-384,Done,Podcast sponsorship,Write the sponsor message,Marketing,16,
+TES-385,Done,Podcast sponsorship,Negotiate the rate,Marketing,2,
+TES-386,In progress,Podcast sponsorship,Review listener numbers,Marketing,6,
+TES-387,Done,Podcast sponsorship,Kickoff meeting,Marketing,16,
+TES-388,To do,Podcast sponsorship,Collect feedback,Marketing,12,
+TES-389,Done,Podcast sponsorship,Write final report,Marketing,4,
+TES-390,In progress,Support shift planner,Choose a shift planning tool for support agents,Customer Success,12,Rotas are kept in a spreadsheet today.
+TES-391,In progress,Support shift planner,Import agent contracts and holidays,Customer Success,4,
+TES-392,Done,Support shift planner,Let agents swap shifts in the tool,Customer Success,8,
+TES-393,To do,Support shift planner,Train team leads,Customer Success,8,
+TES-394,In progress,Support shift planner,Write final report,Customer Success,12,
+TES-395,Done,Support shift planner,Budget sign-off,Customer Success,4,
+TES-396,Done,Support shift planner,Weekly status update,Customer Success,4,
+TES-397,To do,Investor data room,Assemble contracts for the investor data room,Sales and Partnerships,12,Preparation for a possible funding round.
+TES-398,Done,Investor data room,Summarise the top 50 merchant contracts,Sales and Partnerships,2,
+TES-399,To do,Investor data room,Answer due-diligence questions on the sales pipeline,Sales and Partnerships,4,
+TES-400,To do,Investor data room,Redact personal data from documents,Sales and Partnerships,4,
+TES-401,In progress,Investor data room,Collect feedback,Sales and Partnerships,16,
+TES-402,Done,Investor data room,Write final report,Sales and Partnerships,2,
+TES-403,Done,Investor data room,Weekly status update,Sales and Partnerships,4,
+TES-404,Done,MegaMart loyalty module,Build a loyalty points module to MegaMart’s specification,Product Engineering,1,MegaMart will sign a three-year contract if we build it.
+TES-405,To do,MegaMart loyalty module,Integrate with MegaMart’s own customer database,Product Engineering,3,
+TES-406,Done,MegaMart loyalty module,MegaMart-only reporting screens,Product Engineering,3,No other merchant will have access.
+TES-407,In progress,MegaMart loyalty module,Weekly requirements calls with MegaMart IT,Product Engineering,8,
+TES-408,Done,MegaMart loyalty module,Dedicated test environment for MegaMart,Product Engineering,5,
+TES-409,Done,MegaMart loyalty module,Release and rollout,Product Engineering,2,Gradual rollout behind a feature flag.
+TES-410,Done,MegaMart loyalty module,Add automated tests,Product Engineering,1,
+TES-411,In progress,MegaMart loyalty module,Update runbook,Product Engineering,2,
+TES-412,Done,Castell Group enterprise deal,Negotiate the Castell Group contract,Sales and Partnerships,6,Our largest ever deal: 400 stores.
+TES-413,To do,Castell Group enterprise deal,Commit to a custom approval workflow for Castell,Sales and Partnerships,2,Written into the contract as a deliverable only they need.
+TES-414,To do,Castell Group enterprise deal,Custom invoice layout for Castell head office,Sales and Partnerships,12,
+TES-415,To do,Castell Group enterprise deal,Named engineer assigned to Castell requests,Sales and Partnerships,6,
+TES-416,Done,Castell Group enterprise deal,Kickoff meeting,Sales and Partnerships,4,
+TES-417,To do,Castell Group enterprise deal,Collect feedback,Sales and Partnerships,12,
+TES-418,To do,Castell Group enterprise deal,Budget sign-off,Sales and Partnerships,2,
+TES-419,Done,Castell Group enterprise deal,Write final report,Sales and Partnerships,4,
+TES-420,Done,United States market entry,Market study of small retailers in Texas and Florida,Sales and Partnerships,8,
+TES-421,Done,United States market entry,Pilot with 30 shops in Austin,Sales and Partnerships,8,First paying merchants in the United States.
+TES-422,Done,United States market entry,US payment licence application,Sales and Partnerships,8,
+TES-423,To do,United States market entry,Hire a US country manager,Sales and Partnerships,2,
+TES-424,Done,United States market entry,Kickoff meeting,Sales and Partnerships,2,
+TES-425,To do,United States market entry,Collect feedback,Sales and Partnerships,12,
+TES-426,To do,United States market entry,Budget sign-off,Sales and Partnerships,6,
+TES-427,Done,United States market entry,Agree timeline,Sales and Partnerships,2,
+TES-428,Done,United States market entry,Write final report,Sales and Partnerships,8,
+TES-429,Done,Dubai reseller agreement,Sign a reseller for the United Arab Emirates,Sales and Partnerships,2,A Dubai firm offers to sell Tessel to Gulf retailers.
+TES-430,In progress,Dubai reseller agreement,Support dirham pricing,Sales and Partnerships,16,
+TES-431,To do,Dubai reseller agreement,Arabic translation of the merchant app,Sales and Partnerships,6,
+TES-432,Done,Dubai reseller agreement,Reseller training in Dubai,Sales and Partnerships,16,
+TES-433,To do,Dubai reseller agreement,Stakeholder review,Sales and Partnerships,4,
+TES-434,To do,Dubai reseller agreement,Agree timeline,Sales and Partnerships,4,
+TES-435,Done,Dubai reseller agreement,Write final report,Sales and Partnerships,4,
+TES-436,Done,Dubai reseller agreement,Collect feedback,Sales and Partnerships,2,
+TES-437,Done,Tessel Terminal One,Design our own card reader,Payments Engineering,2,Industrial design and circuit board for a Tessel-made terminal.
+TES-438,Done,Tessel Terminal One,Select a contract manufacturer in Shenzhen,Payments Engineering,8,
+TES-439,To do,Tessel Terminal One,Write firmware for the reader,Payments Engineering,2,
+TES-440,In progress,Tessel Terminal One,Card scheme hardware certification,Payments Engineering,3,
+TES-441,Done,Tessel Terminal One,"Order the first 5,000 units",Payments Engineering,1,
+TES-442,In progress,Tessel Terminal One,Fix bugs found in QA,Payments Engineering,5,
+TES-443,Done,Tessel Terminal One,Release and rollout,Payments Engineering,3,Gradual rollout behind a feature flag.
+TES-444,To do,Tessel Terminal One,Write technical design note,Payments Engineering,3,
+TES-445,Done,Tessel Terminal One,Sprint demo,Payments Engineering,1,
+TES-446,Done,Saturday maintenance windows,Take card payments offline every Saturday 14:00 to 15:00 for releases,Payments Engineering,5,Engineers prefer releasing in working hours rather than at night.
+TES-447,Done,Saturday maintenance windows,Announce the weekly downtime to merchants,Payments Engineering,5,
+TES-448,Done,Saturday maintenance windows,Exclude the window from availability reporting,Payments Engineering,1,
+TES-449,To do,Saturday maintenance windows,Move the release schedule to Saturdays,Payments Engineering,1,
+TES-450,Done,Saturday maintenance windows,Release and rollout,Payments Engineering,5,Gradual rollout behind a feature flag.
+TES-451,To do,Saturday maintenance windows,Sprint demo,Payments Engineering,5,
+TES-452,To do,Saturday maintenance windows,Write technical design note,Payments Engineering,2,
+TES-453,To do,Saturday maintenance windows,Update runbook,Payments Engineering,3,
+TES-454,Done,Saturday maintenance windows,Add automated tests,Payments Engineering,2,
+TES-455,Done,Mandatory onboarding call,Require a 45-minute call with an agent before an account can take payments,Customer Success,8,Agents believe merchants set up better when walked through it.
+TES-456,Done,Mandatory onboarding call,Block activation until the call is completed,Customer Success,4,
+TES-457,In progress,Mandatory onboarding call,Booking calendar for onboarding calls,Customer Success,6,
+TES-458,To do,Mandatory onboarding call,Hire six onboarding agents,Customer Success,4,
+TES-459,To do,Mandatory onboarding call,Weekly status update,Customer Success,4,
+TES-460,To do,Mandatory onboarding call,Agree timeline,Customer Success,16,
+TES-461,Done,Mandatory onboarding call,Stakeholder review,Customer Success,12,
+TES-462,In progress,Mandatory onboarding call,Write final report,Customer Success,8,
+TES-463,In progress,Switzerland and Austria pilot,Pilot with 60 shops in Zurich and Vienna,Sales and Partnerships,12,Reuses the German-language product.
+TES-464,Done,Switzerland and Austria pilot,Support Swiss francs,Sales and Partnerships,16,
+TES-465,Done,Switzerland and Austria pilot,Swiss and Austrian merchant agreements,Sales and Partnerships,12,
+TES-466,To do,Switzerland and Austria pilot,Assign two account managers from the German team,Sales and Partnerships,8,
+TES-467,To do,Switzerland and Austria pilot,Weekly status update,Sales and Partnerships,6,
+TES-468,Done,Switzerland and Austria pilot,Stakeholder review,Sales and Partnerships,16,
+TES-469,Done,Switzerland and Austria pilot,Collect feedback,Sales and Partnerships,8,
+TES-470,In progress,Mid-size chains pilot,Sell the standard product to chains of 20 to 50 shops,Sales and Partnerships,6,No custom features; the same product small shops use.
+TES-471,Done,Mid-size chains pilot,Multi-shop account view,Sales and Partnerships,8,Useful to any merchant with more than one shop.
+TES-472,To do,Mid-size chains pilot,Pilot with five regional chains,Sales and Partnerships,6,
+TES-473,In progress,Mid-size chains pilot,Pricing for 20 or more shops,Sales and Partnerships,4,
+TES-474,Done,Mid-size chains pilot,Weekly status update,Sales and Partnerships,6,
+TES-475,To do,Mid-size chains pilot,Budget sign-off,Sales and Partnerships,12,
+TES-476,Done,Mid-size chains pilot,Stakeholder review,Sales and Partnerships,8,
+TES-477,To do,Mid-size chains pilot,Write final report,Sales and Partnerships,8,
+TES-478,In progress,Mid-size chains pilot,Kickoff meeting,Sales and Partnerships,12,
+TES-479,To do,White-label card reader,Put the Tessel logo on a supplier’s existing card reader,Payments Engineering,8,The supplier designs and makes it; we choose the colour and logo.
+TES-480,In progress,White-label card reader,"Supply contract for 10,000 readers",Payments Engineering,2,
+TES-481,In progress,White-label card reader,Tessel-branded packaging,Payments Engineering,2,
+TES-482,Done,White-label card reader,Warranty and returns handled by Tessel,Payments Engineering,2,
+TES-483,In progress,White-label card reader,Release and rollout,Payments Engineering,5,Gradual rollout behind a feature flag.
+TES-484,Done,White-label card reader,Add automated tests,Payments Engineering,5,
+TES-485,Done,White-label card reader,Fix bugs found in QA,Payments Engineering,1,
+TES-486,To do,White-label card reader,Code review fixes,Payments Engineering,8,
+TES-487,Done,White-label card reader,Update runbook,Payments Engineering,8,
+TES-488,Done,Premium phone support tier,Paid plan with a direct phone line to a named agent,Customer Success,4,Some merchants say they would stay if they could always reach a person.
+TES-489,In progress,Premium phone support tier,Promote the phone line to new merchants during setup,Customer Success,12,
+TES-490,Done,Premium phone support tier,Hire agents for the premium line,Customer Success,6,
+TES-491,To do,Premium phone support tier,Measure whether premium merchants stay longer,Customer Success,6,
+TES-492,To do,Premium phone support tier,Kickoff meeting,Customer Success,8,
+TES-493,Done,Premium phone support tier,Stakeholder review,Customer Success,4,
+TES-494,To do,Premium phone support tier,Write final report,Customer Success,6,

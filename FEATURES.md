@@ -9,7 +9,7 @@ Read these first:
 
 ## Where things stand
 
-The repository contains documentation only. No code has been written.
+Steps 0 to 8 are built and their checks pass against a local Supabase, with the mock provider. Step 9 is built and passes locally; deployment to Vercel and a hosted Supabase project is still to do and needs the owner's accounts. No AI model has been chosen.
 
 ## What version 1 must do
 

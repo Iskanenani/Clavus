@@ -1,0 +1,41 @@
+{
+  "name": "clavus",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "data": "node scripts/generate-data.mjs",
+    "preview": "vite preview",
+    "db:seed": "node --env-file=.env.local scripts/seed.mjs",
+    "db:test-access": "node --env-file=.env.local scripts/test-access.mjs",
+    "db:setup": "supabase db reset && npm run db:seed",
+    "judge": "node --env-file=.env.local scripts/judge-all.mjs",
+    "test:import": "node scripts/test-import.mjs",
+    "accuracy": "node --env-file=.env.local scripts/accuracy.mjs",
+    "test:checks": "node scripts/test-verdict-checks.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.119.0",
+    "papaparse": "^5.7.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "recharts": "^3.10.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/papaparse": "^5.5.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.90.0",
+    "prettier": "^3.10.0",
+    "supabase": "^3.1.0",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6"
+  }
+}

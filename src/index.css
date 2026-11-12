@@ -1,0 +1,445 @@
+:root {
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1c2530;
+  background: #f4f6f9;
+  --line: #dde2ea;
+  --muted: #647084;
+  --accent: #2f6fed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+h3 {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+}
+
+p {
+  margin: 0;
+}
+
+/* Layout */
+.page {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+
+.narrow {
+  max-width: 24rem;
+  padding-top: 5rem;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.spread {
+  justify-content: space-between;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.scroll {
+  overflow-x: auto;
+}
+
+/* Top bar */
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 2rem;
+  padding: 0.6rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: 1.1rem;
+}
+
+.topbar nav {
+  display: flex;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.9rem;
+}
+
+/* Text */
+.lead {
+  margin: 0.25rem 0 1.5rem;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+.required {
+  color: var(--muted);
+  font-weight: normal;
+}
+
+.figure {
+  font-size: 1.6rem;
+  font-weight: 650;
+}
+
+.stats {
+  display: flex;
+  gap: 2.5rem;
+}
+
+/* Messages */
+.notice,
+.error,
+.success {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+.notice {
+  border-color: #ecd589;
+  background: #fff9e3;
+}
+
+.error {
+  border-color: #efb4b4;
+  background: #fdeeee;
+  color: #8c1f1f;
+}
+
+.error ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.success {
+  border-color: #a9dcbb;
+  background: #ecf9f0;
+}
+
+/* Controls */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  border-color: #b8c1cf;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+button.primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+button.link {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--accent);
+  text-align: left;
+}
+
+button.link:hover {
+  text-decoration: underline;
+}
+
+button.danger {
+  color: #b42828;
+}
+
+button.tab {
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-weight: 550;
+}
+
+button.tab.active {
+  background: #e9f0fe;
+  color: var(--accent);
+}
+
+.fit {
+  align-self: flex-start;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-weight: 550;
+  font-size: 0.9rem;
+}
+
+label.inline,
+label.check {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+}
+
+label.inline input[type='number'] {
+  width: 5.5rem;
+}
+
+input,
+select,
+textarea {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #c6cdd8;
+  border-radius: 7px;
+  background: #fff;
+  font-weight: normal;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+progress {
+  width: 100%;
+  height: 0.7rem;
+  accent-color: var(--accent);
+}
+
+.grid-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.9rem;
+}
+
+/* One priority or non-goal on the strategy screen */
+.line {
+  display: grid;
+  grid-template-columns: 1fr 11rem auto auto;
+  align-items: start;
+  gap: 0.6rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+th,
+td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid #edf0f4;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+tr.clickable {
+  cursor: pointer;
+}
+
+tr.clickable:hover,
+tr.selected {
+  background: #f1f5fd;
+}
+
+.dot {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-right: 0.55rem;
+  border-radius: 50%;
+}
+
+/* Verdict badges */
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  background: #eceff3;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge.serves {
+  background: #e2ecfd;
+  color: #1c4fb8;
+}
+
+.badge.contradicts {
+  background: #fde4e4;
+  color: #a32222;
+  white-space: normal;
+}
+
+.badge.unclear {
+  background: #fdf0cf;
+  color: #7a5200;
+}
+
+.badge.reviewed {
+  background: #e3f5e9;
+  color: #1e6b3a;
+}
+
+/* Lists of projects and work items */
+.projects,
+.items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.projects li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.items li {
+  padding: 0.45rem 0;
+  border-bottom: 1px solid #edf0f4;
+  font-size: 0.92rem;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0.6rem 1rem;
+  border-left: 4px solid var(--accent);
+  background: #f1f5fd;
+  font-style: italic;
+}
+
+blockquote footer {
+  margin-top: 0.3rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-style: normal;
+}
+
+/* Dialog and side panel */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  background: rgb(20 28 40 / 35%);
+}
+
+.panel {
+  width: min(34rem, 100%);
+  height: 100%;
+  padding: 1.5rem;
+  overflow-y: auto;
+  background: #fff;
+  box-shadow: -6px 0 24px rgb(20 28 40 / 15%);
+}
+
+.dialog {
+  align-self: center;
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 40rem) {
+  .line {
+    grid-template-columns: 1fr;
+  }
+}

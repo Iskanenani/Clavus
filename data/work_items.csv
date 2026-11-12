@@ -1,0 +1,495 @@
+title,description,parent,team,effort,status
+Translate checkout into German,"All checkout screens, error messages and receipts in German for merchants in Germany.",German checkout flow,Product Engineering,2,In progress
+Add SEPA direct debit,German shoppers pay by direct debit far more often than by card.,German checkout flow,Product Engineering,8,Done
+Add purchase on invoice,Kauf auf Rechnung is expected by German online shoppers.,German checkout flow,Product Engineering,1,Done
+Show prices with German VAT,Display 19% and 7% VAT rates correctly on receipts.,German checkout flow,Product Engineering,5,Done
+Test checkout with five German pilot merchants,Pilot shops in Cologne and Leipzig.,German checkout flow,Product Engineering,1,Done
+Add automated tests,,German checkout flow,Product Engineering,2,Done
+Update runbook,,German checkout flow,Product Engineering,8,In progress
+Fix bugs found in QA,,German checkout flow,Product Engineering,1,Done
+Write technical design note,,German checkout flow,Product Engineering,2,To do
+Support Factur-X invoice format,Mandatory electronic invoice format for businesses in France.,French e-invoicing compliance,Product Engineering,2,In progress
+Connect to the French invoicing platform,Invoices must be transmitted through a registered platform.,French e-invoicing compliance,Product Engineering,8,Done
+French VAT rates and mentions,TVA rates and the legal mentions required on French invoices.,French e-invoicing compliance,Product Engineering,8,Done
+Legal review with French counsel,Confirm the product meets the mandate before launch in France.,French e-invoicing compliance,Product Engineering,1,Done
+Sprint demo,,French e-invoicing compliance,Product Engineering,5,In progress
+Update runbook,,French e-invoicing compliance,Product Engineering,2,To do
+Code review fixes,,French e-invoicing compliance,Product Engineering,5,In progress
+Add automated tests,,French e-invoicing compliance,Product Engineering,2,Done
+Release and rollout,Gradual rollout behind a feature flag.,French e-invoicing compliance,Product Engineering,8,Done
+German landing pages,"Product pages written for German bakeries, salons and bike shops.",Germany launch campaign,Marketing,8,To do
+Search ads in Germany,Paid search for German small-business payment keywords.,Germany launch campaign,Marketing,12,In progress
+Trade fair stand at EuroShop Düsseldorf,Meet German retailers in person.,Germany launch campaign,Marketing,6,In progress
+German customer stories,Film two early German merchants.,Germany launch campaign,Marketing,12,To do
+Local press outreach,Pitch German retail trade magazines.,Germany launch campaign,Marketing,8,In progress
+Write final report,,Germany launch campaign,Marketing,16,Done
+Weekly status update,,Germany launch campaign,Marketing,2,Done
+Stakeholder review,,Germany launch campaign,Marketing,2,To do
+Kickoff meeting,,Germany launch campaign,Marketing,16,Done
+Agree timeline,,Germany launch campaign,Marketing,4,Done
+Hire four French account executives,Native speakers who will sell to independent retailers in France.,Paris sales office,Sales and Partnerships,16,In progress
+Lease office space in Paris,,Paris sales office,Sales and Partnerships,16,Done
+French sales contracts,Standard merchant agreement under French law.,Paris sales office,Sales and Partnerships,8,In progress
+Set France new-merchant targets,Quarterly targets for merchants signed in France.,Paris sales office,Sales and Partnerships,2,To do
+Budget sign-off,,Paris sales office,Sales and Partnerships,16,To do
+Agree timeline,,Paris sales office,Sales and Partnerships,12,Done
+Write final report,,Paris sales office,Sales and Partnerships,16,To do
+Kickoff meeting,,Paris sales office,Sales and Partnerships,6,Done
+Export transactions in DATEV format,The format nearly all German tax advisers use.,DATEV export for German bookkeeping,Product Engineering,3,Done
+Map Tessel accounts to German chart of accounts,SKR03 and SKR04.,DATEV export for German bookkeeping,Product Engineering,1,Done
+Validate exports with a German tax adviser,,DATEV export for German bookkeeping,Product Engineering,8,To do
+German help article for the export,,DATEV export for German bookkeeping,Product Engineering,2,Done
+Code review fixes,,DATEV export for German bookkeeping,Product Engineering,5,To do
+Fix bugs found in QA,,DATEV export for German bookkeeping,Product Engineering,1,In progress
+Sprint demo,,DATEV export for German bookkeeping,Product Engineering,8,Done
+Run the gateway in a second region,So payments continue if the first region goes down.,Payment gateway failover,Payments Engineering,2,Done
+Automatic traffic switch on failure,Switch within 30 seconds with no manual step.,Payment gateway failover,Payments Engineering,1,To do
+Replicate transaction state between regions,,Payment gateway failover,Payments Engineering,2,Done
+Failover rehearsal in production,Prove the 99.95% availability target can be met.,Payment gateway failover,Payments Engineering,2,Done
+Alert when regions drift out of sync,,Payment gateway failover,Payments Engineering,8,To do
+Write technical design note,,Payment gateway failover,Payments Engineering,5,In progress
+Update runbook,,Payment gateway failover,Payments Engineering,2,Done
+Fix bugs found in QA,,Payment gateway failover,Payments Engineering,3,Done
+Code review fixes,,Payment gateway failover,Payments Engineering,1,Done
+Set up a 24/7 on-call rota for payments,An engineer reachable within five minutes at any hour.,Payments on-call and incident response,Payments Engineering,1,Done
+Define payment availability alerts,Page when card or online payment success rate drops.,Payments on-call and incident response,Payments Engineering,8,Done
+Write incident playbooks,Step-by-step recovery for the ten most likely payment failures.,Payments on-call and incident response,Payments Engineering,2,Done
+Post-incident review process,Every outage gets a written review and follow-up actions.,Payments on-call and incident response,Payments Engineering,3,In progress
+Write technical design note,,Payments on-call and incident response,Payments Engineering,8,Done
+Fix bugs found in QA,,Payments on-call and incident response,Payments Engineering,3,In progress
+Sprint demo,,Payments on-call and incident response,Payments Engineering,5,To do
+Code review fixes,,Payments on-call and incident response,Payments Engineering,3,Done
+Add automated tests,,Payments on-call and incident response,Payments Engineering,5,In progress
+Store card payments when the connection drops,The terminal app accepts the card and submits it later.,Offline card payments,Payments Engineering,1,Done
+Risk limits for offline payments,Cap the amount accepted without authorisation.,Offline card payments,Payments Engineering,2,Done
+Automatic submission when back online,,Offline card payments,Payments Engineering,3,Done
+Merchant setting to enable offline mode,,Offline card payments,Payments Engineering,1,Done
+Field test in shops with poor connectivity,Market stalls and basement shops lose sales today.,Offline card payments,Payments Engineering,2,In progress
+Add automated tests,,Offline card payments,Payments Engineering,5,Done
+Release and rollout,Gradual rollout behind a feature flag.,Offline card payments,Payments Engineering,1,Done
+Update runbook,,Offline card payments,Payments Engineering,8,To do
+Move the payments ledger to the new database cluster,The current database causes most of our payment outages.,Zero-downtime ledger migration,Payments Engineering,3,Done
+Dual-write during migration,No payment downtime during the move.,Zero-downtime ledger migration,Payments Engineering,8,Done
+Verify every balance after cutover,,Zero-downtime ledger migration,Payments Engineering,3,In progress
+Rollback plan,Return to the old cluster within minutes if payments fail.,Zero-downtime ledger migration,Payments Engineering,5,To do
+Update runbook,,Zero-downtime ledger migration,Payments Engineering,1,To do
+Code review fixes,,Zero-downtime ledger migration,Payments Engineering,1,Done
+Add automated tests,,Zero-downtime ledger migration,Payments Engineering,2,Done
+Release and rollout,Gradual rollout behind a feature flag.,Zero-downtime ledger migration,Payments Engineering,1,Done
+Sprint demo,,Zero-downtime ledger migration,Payments Engineering,2,Done
+Simulate December peak payment volume,Three times the highest volume seen so far.,Peak season load testing,Payments Engineering,1,Done
+Find and fix bottlenecks in card authorisation,,Peak season load testing,Payments Engineering,2,Done
+Capacity plan for peak trading days,Payments must stay available on the busiest days of the year.,Peak season load testing,Payments Engineering,3,In progress
+Automate the load test,Run it before every major release.,Peak season load testing,Payments Engineering,8,Done
+Add automated tests,,Peak season load testing,Payments Engineering,3,Done
+Write technical design note,,Peak season load testing,Payments Engineering,5,To do
+Update runbook,,Peak season load testing,Payments Engineering,8,In progress
+Code review fixes,,Peak season load testing,Payments Engineering,2,In progress
+Fix bugs found in QA,,Peak season load testing,Payments Engineering,5,Done
+Online signup form,A merchant creates an account without contacting sales.,Self-service signup,Product Engineering,3,In progress
+Company lookup from business registers,Fill in company details automatically.,Self-service signup,Product Engineering,3,In progress
+Choose a plan and accept terms online,No sales call or paper contract.,Self-service signup,Product Engineering,8,Done
+Measure signup completion,Share of merchants who finish signup without staff help.,Self-service signup,Product Engineering,2,In progress
+Update runbook,,Self-service signup,Product Engineering,8,Done
+Release and rollout,Gradual rollout behind a feature flag.,Self-service signup,Product Engineering,8,In progress
+Write technical design note,,Self-service signup,Product Engineering,1,Done
+Sprint demo,,Self-service signup,Product Engineering,8,In progress
+Add automated tests,,Self-service signup,Product Engineering,8,To do
+Automated ID document verification,Replace the manual review by our compliance staff.,Automated identity checks,Payments Engineering,2,In progress
+Instant bank account verification,,Automated identity checks,Payments Engineering,3,To do
+Decision in under five minutes for standard cases,So a new merchant can take a first payment the same day without staff.,Automated identity checks,Payments Engineering,2,Done
+Queue only exceptions for manual review,,Automated identity checks,Payments Engineering,5,To do
+Audit trail for the regulator,,Automated identity checks,Payments Engineering,5,Done
+Sprint demo,,Automated identity checks,Payments Engineering,3,Done
+Code review fixes,,Automated identity checks,Payments Engineering,3,Done
+Add automated tests,,Automated identity checks,Payments Engineering,8,In progress
+Update runbook,,Automated identity checks,Payments Engineering,5,In progress
+Write technical design note,,Automated identity checks,Payments Engineering,8,Done
+Step-by-step setup checklist in the app,Guides a new merchant from account to first payment.,In-app setup guide,Product Engineering,8,To do
+Test payment walkthrough,The merchant takes a 1 euro test payment by themselves.,In-app setup guide,Product Engineering,8,Done
+Setup progress reminders by email,,In-app setup guide,Product Engineering,1,In progress
+Remove the mandatory setup call,Setup should not require talking to staff.,In-app setup guide,Product Engineering,2,Done
+Sprint demo,,In-app setup guide,Product Engineering,3,Done
+Fix bugs found in QA,,In-app setup guide,Product Engineering,3,Done
+Update runbook,,In-app setup guide,Product Engineering,8,In progress
+Add automated tests,,In-app setup guide,Product Engineering,2,In progress
+Rewrite the 50 most-read help articles,"In plain language, with screenshots.",Help centre rewrite,Customer Success,16,To do
+Setup articles for each shop type,So merchants can set up without calling us.,Help centre rewrite,Customer Success,6,Done
+Search inside the help centre,,Help centre rewrite,Customer Success,16,Done
+Measure which articles fail to answer,,Help centre rewrite,Customer Success,6,Done
+Weekly status update,,Help centre rewrite,Customer Success,6,Done
+Collect feedback,,Help centre rewrite,Customer Success,8,Done
+Stakeholder review,,Help centre rewrite,Customer Success,2,Done
+Record a two-minute video for each setup step,"Sign up, connect bank, take a first payment.",Video tutorials for new merchants,Marketing,8,To do
+Embed videos in the setup guide,,Video tutorials for new merchants,Marketing,2,In progress
+"Subtitles in Dutch, English, German and French",,Video tutorials for new merchants,Marketing,8,Done
+Track whether viewers finish setup unaided,,Video tutorials for new merchants,Marketing,2,Done
+Stakeholder review,,Video tutorials for new merchants,Marketing,16,In progress
+Weekly status update,,Video tutorials for new merchants,Marketing,6,Done
+Budget sign-off,,Video tutorials for new merchants,Marketing,12,In progress
+Agree timeline,,Video tutorials for new merchants,Marketing,16,In progress
+Partner login for accountants,One login to see all the merchants they advise.,Accountant partner portal,Product Engineering,5,To do
+Invite a client to Tessel from the portal,The accountant starts the merchant signup.,Accountant partner portal,Product Engineering,2,In progress
+Read-only access to client books,,Accountant partner portal,Product Engineering,3,Done
+Dashboard of merchants referred,Shows each partner how many merchants they have brought.,Accountant partner portal,Product Engineering,1,To do
+Partner onboarding flow,,Accountant partner portal,Product Engineering,2,Done
+Fix bugs found in QA,,Accountant partner portal,Product Engineering,3,Done
+Write technical design note,,Accountant partner portal,Product Engineering,2,In progress
+Add automated tests,,Accountant partner portal,Product Engineering,3,In progress
+Code review fixes,,Accountant partner portal,Product Engineering,1,Done
+Release and rollout,Gradual rollout behind a feature flag.,Accountant partner portal,Product Engineering,8,To do
+Design commission tiers for resellers,Pay per active merchant brought in.,Reseller commission programme,Sales and Partnerships,8,Done
+Reseller agreement template,,Reseller commission programme,Sales and Partnerships,2,Done
+Track merchants by referring partner,Needed to pay commission and measure the share of merchants from partners.,Reseller commission programme,Sales and Partnerships,12,To do
+Monthly commission payouts,,Reseller commission programme,Sales and Partnerships,12,Done
+Weekly status update,,Reseller commission programme,Sales and Partnerships,16,Done
+Agree timeline,,Reseller commission programme,Sales and Partnerships,6,Done
+Write final report,,Reseller commission programme,Sales and Partnerships,2,In progress
+Budget sign-off,,Reseller commission programme,Sales and Partnerships,6,To do
+Events for accounting firms in eight cities,Present Tessel to firms that advise small retailers.,Partner recruitment roadshow,Sales and Partnerships,4,In progress
+Target list of 300 accounting firms,,Partner recruitment roadshow,Sales and Partnerships,12,Done
+Sign partner agreements at the events,,Partner recruitment roadshow,Sales and Partnerships,6,Done
+Follow-up calls with attendees,,Partner recruitment roadshow,Sales and Partnerships,16,Done
+Collect feedback,,Partner recruitment roadshow,Sales and Partnerships,6,Done
+Weekly status update,,Partner recruitment roadshow,Sales and Partnerships,2,Done
+Kickoff meeting,,Partner recruitment roadshow,Sales and Partnerships,2,In progress
+Stakeholder review,,Partner recruitment roadshow,Sales and Partnerships,16,Done
+Write final report,,Partner recruitment roadshow,Sales and Partnerships,16,To do
+Brochure template with partner logo,For accountants and resellers to hand to their clients.,Co-branded partner marketing kit,Marketing,12,In progress
+Partner email templates,,Co-branded partner marketing kit,Marketing,12,Done
+Slide deck for resellers,How to explain Tessel to a small retailer.,Co-branded partner marketing kit,Marketing,16,Done
+Partner section on the website,,Co-branded partner marketing kit,Marketing,2,Done
+Budget sign-off,,Co-branded partner marketing kit,Marketing,12,To do
+Kickoff meeting,,Co-branded partner marketing kit,Marketing,8,Done
+Weekly status update,,Co-branded partner marketing kit,Marketing,16,Done
+Score each merchant on risk of leaving,"Based on payment volume, logins and support contacts in the first year.",First-year merchant health score,Customer Success,8,To do
+Weekly list of at-risk merchants,,First-year merchant health score,Customer Success,6,In progress
+Playbook for contacting at-risk merchants,,First-year merchant health score,Customer Success,16,Done
+Report first-year churn monthly,Track progress from 24% towards 12%.,First-year merchant health score,Customer Success,2,To do
+Budget sign-off,,First-year merchant health score,Customer Success,6,Done
+Agree timeline,,First-year merchant health score,Customer Success,2,Done
+Stakeholder review,,First-year merchant health score,Customer Success,2,In progress
+Weekly status update,,First-year merchant health score,Customer Success,4,To do
+Kickoff meeting,,First-year merchant health score,Customer Success,16,To do
+Ask for the reason when a merchant cancels,,Cancellation save flow,Product Engineering,2,To do
+Offer a fix matched to the reason,For example a cheaper plan or a pause instead of leaving.,Cancellation save flow,Product Engineering,8,Done
+Pause account option,,Cancellation save flow,Product Engineering,2,Done
+Report of merchants kept by the flow,Counts towards the first-year churn target.,Cancellation save flow,Product Engineering,8,To do
+Add automated tests,,Cancellation save flow,Product Engineering,2,Done
+Release and rollout,Gradual rollout behind a feature flag.,Cancellation save flow,Product Engineering,1,To do
+Fix bugs found in QA,,Cancellation save flow,Product Engineering,8,Done
+Update runbook,,Cancellation save flow,Product Engineering,2,Done
+Sprint demo,,Cancellation save flow,Product Engineering,3,Done
+"Check in with every merchant at 30, 90 and 180 days",Most merchants who leave do so in their first year.,First-year check-in programme,Customer Success,8,Done
+Check-in script and survey,,First-year check-in programme,Customer Success,6,Done
+Route problems found to the right team,,First-year check-in programme,Customer Success,8,In progress
+Compare churn of contacted and uncontacted merchants,,First-year check-in programme,Customer Success,8,To do
+Budget sign-off,,First-year check-in programme,Customer Success,16,In progress
+Stakeholder review,,First-year check-in programme,Customer Success,2,In progress
+Weekly status update,,First-year check-in programme,Customer Success,4,Done
+Agree timeline,,First-year check-in programme,Customer Success,16,Done
+Recruit account managers in Munich and Hamburg,Six people who will visit local independent shops.,Project Rhine,Sales and Partnerships,16,In progress
+Rent co-working desks in both cities,,Project Rhine,Sales and Partnerships,6,Done
+Standard merchant agreement under local law,Reviewed by a Frankfurt law firm.,Project Rhine,Sales and Partnerships,12,In progress
+First 200 shop visits,Bakeries and bike shops in Bavaria and the north.,Project Rhine,Sales and Partnerships,6,To do
+Local-language sales training,,Project Rhine,Sales and Partnerships,12,Done
+Weekly status update,,Project Rhine,Sales and Partnerships,8,In progress
+Agree timeline,,Project Rhine,Sales and Partnerships,12,Done
+Kickoff meeting,,Project Rhine,Sales and Partnerships,8,Done
+Budget sign-off,,Project Rhine,Sales and Partnerships,12,To do
+Translate the merchant app for the Lyon pilot,"Every screen, including receipts and error messages.",Project Marianne,Product Engineering,3,Done
+Support Cartes Bancaires,The domestic card scheme most shoppers there use.,Project Marianne,Product Engineering,5,To do
+Hire support agents who speak the language,Based in Lille.,Project Marianne,Product Engineering,2,In progress
+Pilot with 40 shops in Lyon and Marseille,,Project Marianne,Product Engineering,1,Done
+Release and rollout,Gradual rollout behind a feature flag.,Project Marianne,Product Engineering,2,Done
+Fix bugs found in QA,,Project Marianne,Product Engineering,2,To do
+Update runbook,,Project Marianne,Product Engineering,3,In progress
+Add automated tests,,Project Marianne,Product Engineering,3,To do
+Write technical design note,,Project Marianne,Product Engineering,8,Done
+Integrate a second acquiring bank,Today every card transaction goes through one bank.,Second acquirer integration,Payments Engineering,1,Done
+Route transactions to whichever bank is responding,"If one bank has an outage, shops keep trading.",Second acquirer integration,Payments Engineering,3,In progress
+Reconcile settlements from two banks,,Second acquirer integration,Payments Engineering,8,To do
+Contract and certification with the second bank,,Second acquirer integration,Payments Engineering,8,In progress
+Monitor approval rates per bank,,Second acquirer integration,Payments Engineering,1,To do
+Release and rollout,Gradual rollout behind a feature flag.,Second acquirer integration,Payments Engineering,3,To do
+Sprint demo,,Second acquirer integration,Payments Engineering,2,Done
+Update runbook,,Second acquirer integration,Payments Engineering,2,To do
+Code review fixes,,Second acquirer integration,Payments Engineering,3,To do
+Switch off one service on purpose each month,See whether shops can still take cards while it is down.,Game days,Payments Engineering,2,To do
+Record what broke and how long recovery took,,Game days,Payments Engineering,8,Done
+Fix the weaknesses each exercise uncovers,,Game days,Payments Engineering,8,In progress
+Rehearse loss of the card authorisation service,,Game days,Payments Engineering,2,Done
+Add automated tests,,Game days,Payments Engineering,5,To do
+Write technical design note,,Game days,Payments Engineering,2,Done
+Code review fixes,,Game days,Payments Engineering,3,Done
+Fix bugs found in QA,,Game days,Payments Engineering,3,Done
+Activate accounts automatically after checks pass,Today an operations agent presses a button for each new shop.,Zero-touch activation,Product Engineering,8,To do
+Connect the bank account through open banking,Replaces emailing a bank statement to our team.,Zero-touch activation,Product Engineering,5,Done
+Ship the card reader pre-paired to the account,It works when taken out of the box.,Zero-touch activation,Product Engineering,5,To do
+Remove the welcome call from the activation steps,,Zero-touch activation,Product Engineering,8,Done
+Code review fixes,,Zero-touch activation,Product Engineering,2,To do
+Fix bugs found in QA,,Zero-touch activation,Product Engineering,5,Done
+Write technical design note,,Zero-touch activation,Product Engineering,2,Done
+List the 20 questions new shops phone us about most,From six months of call and chat logs.,Top 20 contact reasons,Customer Success,4,In progress
+Answer each question inside the product at the point it arises,For example explain payout timing on the payout screen.,Top 20 contact reasons,Customer Success,2,To do
+Fix the three product defects behind the most calls,,Top 20 contact reasons,Customer Success,12,Done
+Track calls per new shop in the first month,Target is under one.,Top 20 contact reasons,Customer Success,4,Done
+Collect feedback,,Top 20 contact reasons,Customer Success,6,In progress
+Write final report,,Top 20 contact reasons,Customer Success,4,Done
+Weekly status update,,Top 20 contact reasons,Customer Success,2,To do
+Personal referral link for each bookkeeper,Bookkeepers recommend tools to the shops whose books they keep.,Bookkeeper referral links,Sales and Partnerships,16,Done
+Reward for each client who starts trading,,Bookkeeper referral links,Sales and Partnerships,12,Done
+Recruit 500 freelance bookkeepers,Through bookkeeping associations.,Bookkeeper referral links,Sales and Partnerships,12,To do
+Leaderboard of top referrers,,Bookkeeper referral links,Sales and Partnerships,8,Done
+Kickoff meeting,,Bookkeeper referral links,Sales and Partnerships,8,Done
+Write final report,,Bookkeeper referral links,Sales and Partnerships,2,Done
+Weekly status update,,Bookkeeper referral links,Sales and Partnerships,12,In progress
+Public API to create a merchant account,Firms that install tills for small shops can set Tessel up for their customers.,Till installer API,Product Engineering,8,In progress
+API keys and sandbox for installers,,Till installer API,Product Engineering,8,In progress
+Documentation and sample code,,Till installer API,Product Engineering,3,In progress
+Pilot with three till installation firms,Each installs tills in several hundred shops a year.,Till installer API,Product Engineering,8,Done
+Report accounts created per installer,,Till installer API,Product Engineering,1,Done
+Update runbook,,Till installer API,Product Engineering,8,Done
+Release and rollout,Gradual rollout behind a feature flag.,Till installer API,Product Engineering,5,To do
+Fix bugs found in QA,,Till installer API,Product Engineering,8,Done
+Add automated tests,,Till installer API,Product Engineering,3,Done
+Code review fixes,,Till installer API,Product Engineering,2,To do
+Detect shops whose payment volume has halved,In months three to nine after joining.,Quiet account outreach,Customer Success,2,Done
+Call each one within a week,Ask what changed and whether they are trying a competitor.,Quiet account outreach,Customer Success,12,Done
+Offer a fee review to shops considering a switch,,Quiet account outreach,Customer Success,16,Done
+Record outcome of each call,,Quiet account outreach,Customer Success,6,To do
+Weekly status update,,Quiet account outreach,Customer Success,4,To do
+Agree timeline,,Quiet account outreach,Customer Success,4,Done
+Write final report,,Quiet account outreach,Customer Success,2,Done
+Kickoff meeting,,Quiet account outreach,Customer Success,8,In progress
+Collect feedback,,Quiet account outreach,Customer Success,2,Done
+Redesign the monthly statement,Show every fee in one plain table.,Fee transparency statements,Product Engineering,3,Done
+Explain each fee in a sentence,Exit surveys say surprise fees are the top reason shops close their account within months of joining.,Fee transparency statements,Product Engineering,5,To do
+Fee estimate before a plan change,,Fee transparency statements,Product Engineering,2,In progress
+Survey shops on whether fees are now clear,,Fee transparency statements,Product Engineering,1,Done
+Add automated tests,,Fee transparency statements,Product Engineering,8,Done
+Write technical design note,,Fee transparency statements,Product Engineering,2,To do
+Update runbook,,Fee transparency statements,Product Engineering,2,In progress
+New colour palette for the internal admin dashboard,Staff find the current grey theme dated.,Reliability: admin dashboard restyle,Product Engineering,5,Done
+Replace icon set,,Reliability: admin dashboard restyle,Product Engineering,2,In progress
+Rounded corners and new fonts on admin tables,,Reliability: admin dashboard restyle,Product Engineering,2,Done
+Collect staff opinions on the new look,,Reliability: admin dashboard restyle,Product Engineering,8,Done
+Sprint demo,,Reliability: admin dashboard restyle,Product Engineering,2,In progress
+Fix bugs found in QA,,Reliability: admin dashboard restyle,Product Engineering,8,To do
+Code review fixes,,Reliability: admin dashboard restyle,Product Engineering,8,To do
+Add automated tests,,Reliability: admin dashboard restyle,Product Engineering,1,Done
+Update runbook,,Reliability: admin dashboard restyle,Product Engineering,8,Done
+Book a venue in Berlin for the marketing team offsite,Two days of team building for the Amsterdam marketing team.,Germany expansion: Berlin team offsite,Marketing,4,In progress
+Flights and hotel for 35 staff,,Germany expansion: Berlin team offsite,Marketing,4,In progress
+Plan the boat trip and team dinner,,Germany expansion: Berlin team offsite,Marketing,8,In progress
+Offsite photo album,,Germany expansion: Berlin team offsite,Marketing,16,In progress
+Agree timeline,,Germany expansion: Berlin team offsite,Marketing,4,In progress
+Kickoff meeting,,Germany expansion: Berlin team offsite,Marketing,16,Done
+Stakeholder review,,Germany expansion: Berlin team offsite,Marketing,2,Done
+Choose a self-service expense tool for employees,Staff currently email receipts to finance.,Self-service: staff expense tool,Sales and Partnerships,6,In progress
+Import the sales team’s company cards,,Self-service: staff expense tool,Sales and Partnerships,4,In progress
+Train sales staff to file their own expenses,,Self-service: staff expense tool,Sales and Partnerships,8,Done
+Switch off the old expense spreadsheet,,Self-service: staff expense tool,Sales and Partnerships,12,To do
+Budget sign-off,,Self-service: staff expense tool,Sales and Partnerships,6,Done
+Write final report,,Self-service: staff expense tool,Sales and Partnerships,12,To do
+Agree timeline,,Self-service: staff expense tool,Sales and Partnerships,12,In progress
+Survey support staff on job satisfaction,Staff turnover in the support team was high last year.,Retention: employee engagement survey,Customer Success,2,Done
+Exit interviews with employees who resigned,,Retention: employee engagement survey,Customer Success,12,To do
+Propose changes to shift patterns and pay bands,,Retention: employee engagement survey,Customer Success,8,Done
+Present findings to HR,,Retention: employee engagement survey,Customer Success,12,To do
+Stakeholder review,,Retention: employee engagement survey,Customer Success,4,Done
+Agree timeline,,Retention: employee engagement survey,Customer Success,4,Done
+Collect feedback,,Retention: employee engagement survey,Customer Success,6,To do
+Budget sign-off,,Retention: employee engagement survey,Customer Success,6,Done
+Write final report,,Retention: employee engagement survey,Customer Success,6,Done
+Book the hotel for the internal sales kickoff,Annual gathering of our own sales staff.,Partner growth: annual sales kickoff,Sales and Partnerships,6,Done
+Invite a motivational speaker,,Partner growth: annual sales kickoff,Sales and Partnerships,12,Done
+Sales awards ceremony,Prizes for last year’s top sellers.,Partner growth: annual sales kickoff,Sales and Partnerships,4,Done
+Kickoff theme and merchandise,,Partner growth: annual sales kickoff,Sales and Partnerships,12,In progress
+Budget sign-off,,Partner growth: annual sales kickoff,Sales and Partnerships,8,Done
+Collect feedback,,Partner growth: annual sales kickoff,Sales and Partnerships,12,In progress
+Weekly status update,,Partner growth: annual sales kickoff,Sales and Partnerships,16,Done
+Write final report,,Partner growth: annual sales kickoff,Sales and Partnerships,4,To do
+Kickoff meeting,,Partner growth: annual sales kickoff,Sales and Partnerships,6,Done
+Sign up 50 French-speaking shops in Montréal,Reuse the French translation to sell in Québec.,France launch: Québec pilot,Sales and Partnerships,4,In progress
+Support Canadian dollars and Interac,,France launch: Québec pilot,Sales and Partnerships,2,Done
+Register a Canadian entity,,France launch: Québec pilot,Sales and Partnerships,8,In progress
+Hire a sales contractor in Montréal,,France launch: Québec pilot,Sales and Partnerships,6,In progress
+Budget sign-off,,France launch: Québec pilot,Sales and Partnerships,6,Done
+Collect feedback,,France launch: Québec pilot,Sales and Partnerships,16,To do
+Kickoff meeting,,France launch: Québec pilot,Sales and Partnerships,16,Done
+Write final report,,France launch: Québec pilot,Sales and Partnerships,16,Done
+Plan the move to the new Amsterdam office,The current lease ends in March.,Headquarters move,Customer Success,4,Done
+Seating plan for the support floor,,Headquarters move,Customer Success,4,To do
+Move phone system and headsets,,Headquarters move,Customer Success,8,To do
+Order desks and chairs,,Headquarters move,Customer Success,6,In progress
+Write final report,,Headquarters move,Customer Success,16,In progress
+Agree timeline,,Headquarters move,Customer Success,16,In progress
+Stakeholder review,,Headquarters move,Customer Success,12,In progress
+Move code builds to the new build system,Builds take 25 minutes and engineers want them faster.,Build system migration,Product Engineering,1,In progress
+Migrate 140 build scripts,,Build system migration,Product Engineering,5,In progress
+Cache dependencies between builds,,Build system migration,Product Engineering,5,Done
+Retire the old build servers,,Build system migration,Product Engineering,5,Done
+Release and rollout,Gradual rollout behind a feature flag.,Build system migration,Product Engineering,8,Done
+Write technical design note,,Build system migration,Product Engineering,2,In progress
+Fix bugs found in QA,,Build system migration,Product Engineering,3,Done
+Code review fixes,,Build system migration,Product Engineering,3,Done
+Dark colour theme for the merchant app,Requested by a few merchants on the feedback forum.,Dark mode for the merchant app,Product Engineering,5,In progress
+Theme switch in settings,,Dark mode for the merchant app,Product Engineering,8,In progress
+Check contrast of all screens in dark mode,,Dark mode for the merchant app,Product Engineering,2,Done
+Dark versions of charts,,Dark mode for the merchant app,Product Engineering,5,To do
+Sprint demo,,Dark mode for the merchant app,Product Engineering,2,To do
+Write technical design note,,Dark mode for the merchant app,Product Engineering,3,In progress
+Update runbook,,Dark mode for the merchant app,Product Engineering,8,To do
+Add automated tests,,Dark mode for the merchant app,Product Engineering,3,To do
+Commission a new logo,The current logo is eight years old.,Brand refresh,Marketing,2,To do
+New brand colours and typeface,,Brand refresh,Marketing,2,In progress
+Update templates and stationery,,Brand refresh,Marketing,4,To do
+Brand guidelines document,,Brand refresh,Marketing,12,Done
+Replace signage in the office,,Brand refresh,Marketing,2,Done
+Budget sign-off,,Brand refresh,Marketing,12,Done
+Collect feedback,,Brand refresh,Marketing,16,To do
+Kickoff meeting,,Brand refresh,Marketing,12,To do
+Enter three fintech awards,,Industry awards submissions,Marketing,6,Done
+Write award submissions,,Industry awards submissions,Marketing,4,Done
+Book a table at the awards dinner,,Industry awards submissions,Marketing,8,To do
+Press release if shortlisted,,Industry awards submissions,Marketing,6,In progress
+Budget sign-off,,Industry awards submissions,Marketing,12,In progress
+Weekly status update,,Industry awards submissions,Marketing,16,In progress
+Stakeholder review,,Industry awards submissions,Marketing,2,In progress
+Kickoff meeting,,Industry awards submissions,Marketing,6,To do
+Write final report,,Industry awards submissions,Marketing,8,To do
+Review base and bonus split for our sales staff,The plan has not changed in four years.,Sales compensation redesign,Sales and Partnerships,8,Done
+Benchmark pay against other software firms,,Sales compensation redesign,Sales and Partnerships,2,Done
+Model the cost of three options,,Sales compensation redesign,Sales and Partnerships,16,Done
+Present the new plan to the board,,Sales compensation redesign,Sales and Partnerships,4,To do
+Kickoff meeting,,Sales compensation redesign,Sales and Partnerships,12,Done
+Weekly status update,,Sales compensation redesign,Sales and Partnerships,16,In progress
+Collect feedback,,Sales compensation redesign,Sales and Partnerships,4,Done
+One login for all internal staff tools,Employees juggle eleven passwords.,Staff single sign-on,Payments Engineering,2,To do
+Connect internal tools to the identity provider,,Staff single sign-on,Payments Engineering,8,Done
+Require two-factor login for employees,,Staff single sign-on,Payments Engineering,5,In progress
+Remove shared team passwords,,Staff single sign-on,Payments Engineering,3,In progress
+Add automated tests,,Staff single sign-on,Payments Engineering,2,To do
+Fix bugs found in QA,,Staff single sign-on,Payments Engineering,8,Done
+Sprint demo,,Staff single sign-on,Payments Engineering,1,Done
+Research accepting stablecoin payments,An engineer proposed it at the last hackathon.,Crypto payments exploration,Payments Engineering,1,Done
+Prototype with one crypto payment provider,,Crypto payments exploration,Payments Engineering,8,To do
+Summarise regulatory position,,Crypto payments exploration,Payments Engineering,5,Done
+Demo to the product team,,Crypto payments exploration,Payments Engineering,2,In progress
+Fix bugs found in QA,,Crypto payments exploration,Payments Engineering,3,Done
+Sprint demo,,Crypto payments exploration,Payments Engineering,5,In progress
+Write technical design note,,Crypto payments exploration,Payments Engineering,8,In progress
+Code review fixes,,Crypto payments exploration,Payments Engineering,2,Done
+Sponsor a UK small-business podcast for a season,General brand awareness in our existing market.,Podcast sponsorship,Marketing,4,To do
+Write the sponsor message,,Podcast sponsorship,Marketing,16,Done
+Negotiate the rate,,Podcast sponsorship,Marketing,2,Done
+Review listener numbers,,Podcast sponsorship,Marketing,6,In progress
+Kickoff meeting,,Podcast sponsorship,Marketing,16,Done
+Collect feedback,,Podcast sponsorship,Marketing,12,To do
+Write final report,,Podcast sponsorship,Marketing,4,Done
+Choose a shift planning tool for support agents,Rotas are kept in a spreadsheet today.,Support shift planner,Customer Success,12,In progress
+Import agent contracts and holidays,,Support shift planner,Customer Success,4,In progress
+Let agents swap shifts in the tool,,Support shift planner,Customer Success,8,Done
+Train team leads,,Support shift planner,Customer Success,8,To do
+Write final report,,Support shift planner,Customer Success,12,In progress
+Budget sign-off,,Support shift planner,Customer Success,4,Done
+Weekly status update,,Support shift planner,Customer Success,4,Done
+Assemble contracts for the investor data room,Preparation for a possible funding round.,Investor data room,Sales and Partnerships,12,To do
+Summarise the top 50 merchant contracts,,Investor data room,Sales and Partnerships,2,Done
+Answer due-diligence questions on the sales pipeline,,Investor data room,Sales and Partnerships,4,To do
+Redact personal data from documents,,Investor data room,Sales and Partnerships,4,To do
+Collect feedback,,Investor data room,Sales and Partnerships,16,In progress
+Write final report,,Investor data room,Sales and Partnerships,2,Done
+Weekly status update,,Investor data room,Sales and Partnerships,4,Done
+Build a loyalty points module to MegaMart’s specification,MegaMart will sign a three-year contract if we build it.,MegaMart loyalty module,Product Engineering,1,Done
+Integrate with MegaMart’s own customer database,,MegaMart loyalty module,Product Engineering,3,To do
+MegaMart-only reporting screens,No other merchant will have access.,MegaMart loyalty module,Product Engineering,3,Done
+Weekly requirements calls with MegaMart IT,,MegaMart loyalty module,Product Engineering,8,In progress
+Dedicated test environment for MegaMart,,MegaMart loyalty module,Product Engineering,5,Done
+Release and rollout,Gradual rollout behind a feature flag.,MegaMart loyalty module,Product Engineering,2,Done
+Add automated tests,,MegaMart loyalty module,Product Engineering,1,Done
+Update runbook,,MegaMart loyalty module,Product Engineering,2,In progress
+Negotiate the Castell Group contract,Our largest ever deal: 400 stores.,Castell Group enterprise deal,Sales and Partnerships,6,Done
+Commit to a custom approval workflow for Castell,Written into the contract as a deliverable only they need.,Castell Group enterprise deal,Sales and Partnerships,2,To do
+Custom invoice layout for Castell head office,,Castell Group enterprise deal,Sales and Partnerships,12,To do
+Named engineer assigned to Castell requests,,Castell Group enterprise deal,Sales and Partnerships,6,To do
+Kickoff meeting,,Castell Group enterprise deal,Sales and Partnerships,4,Done
+Collect feedback,,Castell Group enterprise deal,Sales and Partnerships,12,To do
+Budget sign-off,,Castell Group enterprise deal,Sales and Partnerships,2,To do
+Write final report,,Castell Group enterprise deal,Sales and Partnerships,4,Done
+Market study of small retailers in Texas and Florida,,United States market entry,Sales and Partnerships,8,Done
+Pilot with 30 shops in Austin,First paying merchants in the United States.,United States market entry,Sales and Partnerships,8,Done
+US payment licence application,,United States market entry,Sales and Partnerships,8,Done
+Hire a US country manager,,United States market entry,Sales and Partnerships,2,To do
+Kickoff meeting,,United States market entry,Sales and Partnerships,2,Done
+Collect feedback,,United States market entry,Sales and Partnerships,12,To do
+Budget sign-off,,United States market entry,Sales and Partnerships,6,To do
+Agree timeline,,United States market entry,Sales and Partnerships,2,Done
+Write final report,,United States market entry,Sales and Partnerships,8,Done
+Sign a reseller for the United Arab Emirates,A Dubai firm offers to sell Tessel to Gulf retailers.,Dubai reseller agreement,Sales and Partnerships,2,Done
+Support dirham pricing,,Dubai reseller agreement,Sales and Partnerships,16,In progress
+Arabic translation of the merchant app,,Dubai reseller agreement,Sales and Partnerships,6,To do
+Reseller training in Dubai,,Dubai reseller agreement,Sales and Partnerships,16,Done
+Stakeholder review,,Dubai reseller agreement,Sales and Partnerships,4,To do
+Agree timeline,,Dubai reseller agreement,Sales and Partnerships,4,To do
+Write final report,,Dubai reseller agreement,Sales and Partnerships,4,Done
+Collect feedback,,Dubai reseller agreement,Sales and Partnerships,2,Done
+Design our own card reader,Industrial design and circuit board for a Tessel-made terminal.,Tessel Terminal One,Payments Engineering,2,Done
+Select a contract manufacturer in Shenzhen,,Tessel Terminal One,Payments Engineering,8,Done
+Write firmware for the reader,,Tessel Terminal One,Payments Engineering,2,To do
+Card scheme hardware certification,,Tessel Terminal One,Payments Engineering,3,In progress
+"Order the first 5,000 units",,Tessel Terminal One,Payments Engineering,1,Done
+Fix bugs found in QA,,Tessel Terminal One,Payments Engineering,5,In progress
+Release and rollout,Gradual rollout behind a feature flag.,Tessel Terminal One,Payments Engineering,3,Done
+Write technical design note,,Tessel Terminal One,Payments Engineering,3,To do
+Sprint demo,,Tessel Terminal One,Payments Engineering,1,Done
+Take card payments offline every Saturday 14:00 to 15:00 for releases,Engineers prefer releasing in working hours rather than at night.,Saturday maintenance windows,Payments Engineering,5,Done
+Announce the weekly downtime to merchants,,Saturday maintenance windows,Payments Engineering,5,Done
+Exclude the window from availability reporting,,Saturday maintenance windows,Payments Engineering,1,Done
+Move the release schedule to Saturdays,,Saturday maintenance windows,Payments Engineering,1,To do
+Release and rollout,Gradual rollout behind a feature flag.,Saturday maintenance windows,Payments Engineering,5,Done
+Sprint demo,,Saturday maintenance windows,Payments Engineering,5,To do
+Write technical design note,,Saturday maintenance windows,Payments Engineering,2,To do
+Update runbook,,Saturday maintenance windows,Payments Engineering,3,To do
+Add automated tests,,Saturday maintenance windows,Payments Engineering,2,Done
+Require a 45-minute call with an agent before an account can take payments,Agents believe merchants set up better when walked through it.,Mandatory onboarding call,Customer Success,8,Done
+Block activation until the call is completed,,Mandatory onboarding call,Customer Success,4,Done
+Booking calendar for onboarding calls,,Mandatory onboarding call,Customer Success,6,In progress
+Hire six onboarding agents,,Mandatory onboarding call,Customer Success,4,To do
+Weekly status update,,Mandatory onboarding call,Customer Success,4,To do
+Agree timeline,,Mandatory onboarding call,Customer Success,16,To do
+Stakeholder review,,Mandatory onboarding call,Customer Success,12,Done
+Write final report,,Mandatory onboarding call,Customer Success,8,In progress
+Pilot with 60 shops in Zurich and Vienna,Reuses the German-language product.,Switzerland and Austria pilot,Sales and Partnerships,12,In progress
+Support Swiss francs,,Switzerland and Austria pilot,Sales and Partnerships,16,Done
+Swiss and Austrian merchant agreements,,Switzerland and Austria pilot,Sales and Partnerships,12,Done
+Assign two account managers from the German team,,Switzerland and Austria pilot,Sales and Partnerships,8,To do
+Weekly status update,,Switzerland and Austria pilot,Sales and Partnerships,6,To do
+Stakeholder review,,Switzerland and Austria pilot,Sales and Partnerships,16,Done
+Collect feedback,,Switzerland and Austria pilot,Sales and Partnerships,8,Done
+Sell the standard product to chains of 20 to 50 shops,No custom features; the same product small shops use.,Mid-size chains pilot,Sales and Partnerships,6,In progress
+Multi-shop account view,Useful to any merchant with more than one shop.,Mid-size chains pilot,Sales and Partnerships,8,Done
+Pilot with five regional chains,,Mid-size chains pilot,Sales and Partnerships,6,To do
+Pricing for 20 or more shops,,Mid-size chains pilot,Sales and Partnerships,4,In progress
+Weekly status update,,Mid-size chains pilot,Sales and Partnerships,6,Done
+Budget sign-off,,Mid-size chains pilot,Sales and Partnerships,12,To do
+Stakeholder review,,Mid-size chains pilot,Sales and Partnerships,8,Done
+Write final report,,Mid-size chains pilot,Sales and Partnerships,8,To do
+Kickoff meeting,,Mid-size chains pilot,Sales and Partnerships,12,In progress
+Put the Tessel logo on a supplier’s existing card reader,The supplier designs and makes it; we choose the colour and logo.,White-label card reader,Payments Engineering,8,To do
+"Supply contract for 10,000 readers",,White-label card reader,Payments Engineering,2,In progress
+Tessel-branded packaging,,White-label card reader,Payments Engineering,2,In progress
+Warranty and returns handled by Tessel,,White-label card reader,Payments Engineering,2,Done
+Release and rollout,Gradual rollout behind a feature flag.,White-label card reader,Payments Engineering,5,In progress
+Add automated tests,,White-label card reader,Payments Engineering,5,Done
+Fix bugs found in QA,,White-label card reader,Payments Engineering,1,Done
+Code review fixes,,White-label card reader,Payments Engineering,8,To do
+Update runbook,,White-label card reader,Payments Engineering,8,Done
+Paid plan with a direct phone line to a named agent,Some merchants say they would stay if they could always reach a person.,Premium phone support tier,Customer Success,4,Done
+Promote the phone line to new merchants during setup,,Premium phone support tier,Customer Success,12,In progress
+Hire agents for the premium line,,Premium phone support tier,Customer Success,6,Done
+Measure whether premium merchants stay longer,,Premium phone support tier,Customer Success,6,To do
+Kickoff meeting,,Premium phone support tier,Customer Success,8,To do
+Stakeholder review,,Premium phone support tier,Customer Success,4,Done
+Write final report,,Premium phone support tier,Customer Success,6,To do
