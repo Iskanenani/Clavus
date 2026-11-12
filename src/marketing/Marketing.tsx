@@ -144,8 +144,8 @@ function ProductPage() {
             </a>
           </div>
           <p className="m-hero-note">
-            <span aria-hidden="true">↳</span> Synthetic data. Human review. A
-            clearer picture.
+            <span aria-hidden="true">↳</span> Evidence you can read. Human
+            review. A clearer picture.
           </p>
         </div>
         <ProductShowcase />
@@ -254,7 +254,7 @@ function ProductPage() {
           </p>
           <div className="m-quote-attribution">
             <span />
-            Tessel · Synthetic demo strategy
+            Tessel · Company strategy
           </div>
         </div>
         <div className="m-evidence-copy">
@@ -300,9 +300,8 @@ function AboutPage() {
             is doing follow the direction its leaders have set?
           </p>
           <p>
-            Clavus began as a student consulting project. Today, it is a working
-            prototype that makes that question concrete, using a fictional
-            company, a real workflow, and judgements you can inspect.
+            Clavus makes that question concrete: one view of where the effort
+            goes, and judgements you can inspect.
           </p>
         </div>
       </section>
@@ -328,37 +327,6 @@ function AboutPage() {
             </li>
           ))}
         </ul>
-      </section>
-
-      <section className="m-origin m-container">
-        <div className="m-origin-illustration" aria-hidden="true">
-          <div className="m-compass-ring m-ring-outer" />
-          <div className="m-compass-ring m-ring-inner" />
-          <span className="m-compass-north">N</span>
-          <span className="m-compass-east">E</span>
-          <span className="m-compass-south">S</span>
-          <span className="m-compass-west">W</span>
-          <Compass />
-          <span className="m-origin-coordinate">INTENTION → DIRECTION</span>
-        </div>
-        <div className="m-origin-copy">
-          <Eyebrow>A name with a direction</Eyebrow>
-          <h2>Clavus</h2>
-          <p className="m-definition">
-            Latin for the tiller.
-            <br />
-            The handle used to steer a ship.
-          </p>
-          <p>
-            A strategy gives you a destination. The day-to-day choices determine
-            your course. We chose a name that speaks to the connection between
-            the two.
-          </p>
-          <p>
-            That is the role we want Clavus to play: help leaders see where
-            effort is pointing, so they can steer with intention.
-          </p>
-        </div>
       </section>
 
       <section className="m-section m-container">
@@ -395,32 +363,6 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="m-prototype m-container">
-        <div>
-          <Eyebrow>Where we are today</Eyebrow>
-          <h2>
-            A working prototype.
-            <br />
-            <em>An open question.</em>
-          </h2>
-        </div>
-        <div>
-          <p>
-            The demo brings together 60 projects and 494 work items across five
-            teams at Tessel, our fictional company. It includes deliberate
-            mismatches to make the review process tangible.
-          </p>
-          <p>
-            Judgements currently come from a mock provider using predefined
-            answers. A live AI model has not yet been selected or evaluated. The
-            demo shows how the product works; it does not demonstrate AI
-            accuracy.
-          </p>
-          <a className="m-text-link" href="/how-it-works">
-            Take a closer look <Arrow diagonal />
-          </a>
-        </div>
-      </section>
       <Closing />
     </>
   )
@@ -482,15 +424,15 @@ function Example() {
           </h2>
         </div>
         <p>
-          Three examples from Tessel.
+          Three examples from Tessel,
           <br />
-          All data and judgements are synthetic.
+          our example company.
         </p>
       </div>
       <div
         className="m-example-choices"
         role="group"
-        aria-label="Choose a synthetic project example"
+        aria-label="Choose a project example"
       >
         {examples.map((item, index) => (
           <button
@@ -586,7 +528,7 @@ function HowPage() {
             <span className="m-nongoal">
               <i>−</i> No selling outside Europe
             </span>
-            <small>Excerpt from Tessel’s synthetic strategy</small>
+            <small>Excerpt from Tessel’s strategy</small>
           </div>
         </article>
         <article className="m-process-step">
@@ -711,31 +653,19 @@ function HowPage() {
               <span aria-hidden="true">+</span>
             </summary>
             <p>
-              No. The prototype imports CSV exports. You map the columns to
-              Clavus’s common format before importing. Live tracker connections
-              are planned for later.
+              No. Clavus imports CSV exports. You map the columns to Clavus’s
+              common format before importing. Live tracker connections are
+              planned for later.
             </p>
           </details>
           <details>
             <summary>
-              Is the demo using a real AI model?
+              What is in the demo?
               <span aria-hidden="true">+</span>
             </summary>
             <p>
-              Not yet. The demo uses a mock provider that reads predefined
-              answers for Tessel’s synthetic projects. A real AI model still
-              needs to be chosen and evaluated.
-            </p>
-          </details>
-          <details>
-            <summary>
-              Can I try it with real company information?
-              <span aria-hidden="true">+</span>
-            </summary>
-            <p>
-              The prototype is for synthetic data only. Explore the fictional
-              company in the demo, or use an invented dataset. Its current mock
-              provider only judges the predefined Tessel projects.
+              Tessel, an example company: 60 projects and 494 work items across
+              five teams, with a strategy of five priorities.
             </p>
           </details>
           <details>
@@ -755,7 +685,7 @@ function HowPage() {
             </summary>
             <p>
               The demo opens the existing Clavus workspace and requires the demo
-              account credentials supplied by the project owner.
+              account credentials supplied by the Clavus team.
             </p>
           </details>
         </div>
@@ -779,7 +709,7 @@ function Closing() {
       <div>
         <DemoLink />
         <p>
-          Explore a fictional company in the working prototype.
+          Explore Tessel, our example company.
           <br />
           Demo account required.
         </p>
@@ -820,15 +750,10 @@ function Footer() {
           <a href="/app">
             Open the demo <Arrow diagonal />
           </a>
-          <p>
-            Synthetic company.
-            <br />
-            Demo account required.
-          </p>
+          <p>Demo account required.</p>
         </nav>
         <div className="m-footer-bottom">
           <span>© {new Date().getFullYear()} Clavus</span>
-          <span>Student consulting project · Prototype</span>
         </div>
       </div>
     </footer>

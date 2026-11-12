@@ -118,7 +118,7 @@ function StrategyPreview() {
       <div className="m-preview-heading">
         <div>
           <h2>A shared reference for every decision</h2>
-          <p>Tessel’s synthetic strategy · 2026–2028</p>
+          <p>Tessel’s strategy · 2026–2028</p>
         </div>
         <span>5 priorities · 3 non-goals</span>
       </div>
@@ -161,7 +161,7 @@ function ReviewPreview() {
       <div className="m-preview-heading">
         <div>
           <h2>France launch: Québec pilot</h2>
-          <p>Sales and Partnerships · Synthetic example</p>
+          <p>Sales and Partnerships</p>
         </div>
         <span className="m-verdict m-verdict-coral">
           <i />
@@ -211,7 +211,7 @@ export function ProductShowcase() {
       </div>
       <div
         className="m-preview"
-        aria-label="Interactive product illustration using Tessel's synthetic data"
+        aria-label="Interactive product illustration using Tessel, an example company"
       >
         <aside className="m-preview-rail" aria-hidden="true">
           <div className="m-preview-rail-brand">
@@ -231,7 +231,7 @@ export function ProductShowcase() {
           <div className="m-rail-bottom">
             <span>T</span>
             <div>
-              Tessel workspace<small>Synthetic company</small>
+              Tessel workspace<small>Example company</small>
             </div>
           </div>
         </aside>
@@ -243,7 +243,7 @@ export function ProductShowcase() {
             </span>
             <span className="m-preview-live">
               <i />
-              Synthetic demo
+              Demo
             </span>
           </div>
           <div className="m-preview-panel" aria-live="polite">
@@ -262,8 +262,7 @@ export function ProductShowcase() {
         </div>
       </div>
       <p className="m-preview-caption">
-        A working prototype, illustrated with Tessel’s synthetic data.
-        Judgements use predefined answers.
+        Illustrated with Tessel, an example company.
       </p>
     </div>
   )

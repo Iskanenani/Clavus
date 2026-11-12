@@ -24,7 +24,7 @@ const pages: Record<
     page: 'how',
     title: 'How it works — Clavus',
     description:
-      'Set your strategy, import the work, inspect the alignment, and review the reasoning. Walk through the Clavus prototype.',
+      'Set your strategy, import the work, inspect the alignment, and review the reasoning.',
   },
 }
 
@@ -36,7 +36,7 @@ export function Website() {
       <>
         <div className="workspace-site-link">
           <a href="/">← Back to Clavus</a>
-          <span>Synthetic data demo</span>
+          <span>Demo workspace</span>
         </div>
         <Suspense
           fallback={<p className="page muted">Opening the workspace…</p>}

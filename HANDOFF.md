@@ -4,6 +4,14 @@ Where the project stands and what to do next. Written on 12 November 2026 at the
 
 ## Where things stand
 
+### Public site wording — 12 November 2026
+
+The owner asked to drop the "MVP" framing from the public site. Removed from `src/marketing/`: the "A name with a direction" section (Latin origin of the name), the "A working prototype. An open question." section, the "Student consulting project · Prototype" footer line, the FAQ entry about the mock AI provider, and the "synthetic / fictional / prototype" labels (Tessel is now called "an example company"). The CSS that only styled the two removed sections is gone too. **The public site no longer says that judgements come from the mock provider; that is still the case (see below), so say it aloud if the jury asks.** Workspace screens were left as they were, apart from the top banner now reading "Demo workspace". Checked all three public pages at 1440 and 380 pixels: no runtime errors, no horizontal overflow. Published through the usual `main` → Vercel flow.
+
+### Map readability — 12 November 2026
+
+The owner found that the map did not show that the blue bars are the firm's strategic priorities. `src/screens/MapScreen.tsx` now opens with one headline ("55% of the work serves one of the strategy's 5 priorities. 45% does not.") and a thin split bar, then groups both the chart and the table under "Strategic priorities" and "Outside the strategy", each with its share. Priorities carry the same 01–05 numbers as the Strategy screen. Both chart blocks share one scale. No database, model or stack change. Checked in a browser against the hosted synthetic data (read-only) at 1500 and 380 pixels, all teams and one team, with no runtime errors; build and formatting pass. Published through the usual `main` → Vercel flow.
+
 ### Strategy usability refinement — 12 November 2026
 
 The owner found that the Strategy screen still looked like a form after the first design pass. Step 12 in FEATURES.md rebuilds it as a readable reference: company direction, numbered priority cards, a non-goal sidebar, counts and validation status. Editing, creation and deletion controls appear on demand. Validation warnings appear inside editors before saving. Failed writes keep the draft; new reference names are generated, and existing identifiers are preserved. No database or model change was made.
