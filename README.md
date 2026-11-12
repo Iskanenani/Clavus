@@ -94,9 +94,9 @@ Log in with the `DEMO_USER_EMAIL` and `DEMO_USER_PASSWORD` you chose in `.env.lo
 
 ### Putting it online
 
-These steps need the owner's accounts and have not been done yet.
+This is done: the app is at https://clavus.vercel.app. The steps are kept here so the setup can be repeated or explained.
 
-1. **Supabase:** create a project, then `npx supabase link`, `npx supabase db push` (tables), `npx supabase functions deploy judge-project` (judging), and `npm run db:seed` with the hosted values in `.env.local`.
+1. **Supabase:** create a project, then `npx supabase link`, `npx supabase db push` (tables), `npx supabase functions deploy judge-project` (judging), and the seed with the hosted values, kept in `.env.hosted` (ignored by git): `node --env-file=.env.hosted scripts/seed.mjs`.
 2. **Vercel:** import the GitHub repository and set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`. Vercel detects Vite by itself.
 3. **A real model, once chosen:** add it in `supabase/functions/_shared/model.ts` (the only file to change) and set `MODEL_PROVIDER` and `MODEL_API_KEY` with `npx supabase secrets set`.
 
@@ -109,6 +109,6 @@ Early prototype, built for a student consulting project.
 - [x] Classification of projects against the strategy (with the mock provider; no AI model chosen yet)
 - [x] Dashboard
 - [x] Accuracy test against the planted mismatches
-- [ ] Deployment to Vercel and a hosted Supabase project (needs the owner's accounts)
+- [x] Deployment: https://clavus.vercel.app, on a hosted Supabase project
 - [ ] Ready-made mappings for common trackers (later)
 - [ ] Live connections to trackers (later)

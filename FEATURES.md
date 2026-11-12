@@ -9,7 +9,7 @@ Read these first:
 
 ## Where things stand
 
-Steps 0 to 8 are built and their checks pass against a local Supabase, with the mock provider. Step 9 is built and passes locally; deployment to Vercel and a hosted Supabase project is still to do and needs the owner's accounts. No AI model has been chosen.
+All nine steps are built and their checks pass, with the mock provider. The app is deployed at https://clavus.vercel.app on a hosted Supabase project, and the full path below ran there twice in a row. No AI model has been chosen yet.
 
 ## What version 1 must do
 
