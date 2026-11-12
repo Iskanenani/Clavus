@@ -86,12 +86,23 @@ How the rules in this document are enforced:
 | Path | What |
 |---|---|
 | `src/screens/` | One file per screen: strategy, import, judge, map, project panel, review log |
+| `src/Website.tsx` | Selects the public page by URL; loads the existing workspace only at `/app` |
+| `src/marketing/` | The three public pages, shared navigation, product illustrations and responsive styles |
+| `vercel.json` | Serves the Vite entry point for direct links to the public pages and workspace |
 | `src/lib/csv.ts` | Mapping a tracker's columns to the common format |
 | `supabase/migrations/` | Tables, access rules, triggers and the SQL behind the map |
 | `supabase/functions/judge-project/` | Judges one project and stores the verdict |
 | `supabase/functions/_shared/verdict.ts` | The prompt, and the checks every model answer must pass |
 | `supabase/functions/_shared/model.ts` | The model adapter and the mock provider. **The one file to edit when a model is chosen** |
 | `scripts/` | Dataset generator, seed, accuracy report and the tests |
+
+### Public website
+
+The product page is at `/`, Who we are at `/who-we-are`, and How it works at `/how-it-works`. Standard links navigate between them, so back/forward, direct links and browser reloads work without adding a routing library. Vercel rewrites those paths to `index.html`.
+
+The authenticated app is now at `/app`, with a link back to the website. It is loaded with React's `lazy`, keeping Supabase and the chart library out of public-page requests. Public illustrations use fixed, labelled synthetic examples; no database or model request is made. The preview's work-item totals are manually checked against the synthetic CSVs: 271 serves, 124 none, 67 contradicts, 32 unclear (494 total). If that dataset changes, update the illustration too.
+
+Public styles are scoped under `.marketing` and use system fonts and SVG/CSS illustrations. No service or dependency was added.
 
 ## Alternatives considered
 

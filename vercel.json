@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/who-we-are", "destination": "/index.html" },
+    { "source": "/how-it-works", "destination": "/index.html" },
+    { "source": "/app", "destination": "/index.html" },
+    { "source": "/who-we-are/", "destination": "/index.html" },
+    { "source": "/how-it-works/", "destination": "/index.html" },
+    { "source": "/app/", "destination": "/index.html" }
+  ]
+}

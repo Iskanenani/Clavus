@@ -70,7 +70,7 @@ npx supabase functions serve # leave running: this is the judging function
 npm run dev                  # in a second terminal; opens on http://localhost:5173
 ```
 
-Log in with the `DEMO_USER_EMAIL` and `DEMO_USER_PASSWORD` you chose in `.env.local`.
+The homepage at `/` introduces the product. The public pages at `/who-we-are` and `/how-it-works` explain its purpose and workflow; they work without a database connection. Open `/app` for the existing workspace, then log in with the `DEMO_USER_EMAIL` and `DEMO_USER_PASSWORD` you chose in `.env.local`.
 
 **What goes in `.env.local`:** `npx supabase start` prints `API_URL`, `ANON_KEY` and `SERVICE_ROLE_KEY`; they go in `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY`. For the hosted project, the same three values are in the Supabase dashboard under Project Settings > API.
 
@@ -110,5 +110,6 @@ Early prototype, built for a student consulting project.
 - [x] Dashboard
 - [x] Accuracy test against the planted mismatches
 - [x] Deployment: https://clavus.vercel.app, on a hosted Supabase project
+- [x] Public product, Who we are, and How it works pages (built and verified locally; deployment pending)
 - [ ] Ready-made mappings for common trackers (later)
 - [ ] Live connections to trackers (later)

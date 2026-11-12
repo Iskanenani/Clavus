@@ -8,8 +8,8 @@ const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined
 
 export const supabaseConfigured = Boolean(url && anonKey)
 
-// When the values are missing, App shows a notice and renders no screen,
-// so no screen ever uses this placeholder.
+// When the values are missing, the workspace shows a setup notice and renders
+// no data screen. The public website does not use this client.
 export const supabase: SupabaseClient = supabaseConfigured
   ? createClient(url!, anonKey!)
   : (null as unknown as SupabaseClient)

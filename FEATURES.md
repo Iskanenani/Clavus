@@ -175,6 +175,12 @@ This is the proof shown to the jury.
 
 **Done when:** the full path in "What version 1 must do" runs on the deployed site, twice in a row, without touching the code.
 
+### Step 10. Public website (owner-requested extension)
+
+**Build:** three public pages: a main product page at `/`, Who we are at `/who-we-are`, and How it works at `/how-it-works`. Explain the strategy-to-work comparison, show labelled synthetic examples, and link to the existing authenticated workspace at `/app`. Keep the current stack and mock provider.
+
+**Done when:** all three pages work without a database connection, their navigation and direct URLs work, the layout fits mobile and desktop, interactive examples and FAQs work, and the demo links reach the existing login screen. The production build and formatting checks pass. Local verification completes this step; publishing remains a separate action.
+
 ## Not in version 1
 
 - Ready-made mappings for specific trackers.
