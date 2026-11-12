@@ -426,6 +426,29 @@ function AboutPage() {
         </div>
       </section>
 
+      <section className="m-team m-container" aria-labelledby="team-heading">
+        <Eyebrow>Our team</Eyebrow>
+        <h2 id="team-heading">
+          The people <em>behind Clavus.</em>
+        </h2>
+        <ul className="m-team-members">
+          {[
+            'Oscar de Froissard de Broissia',
+            'Gabrielle de Larminat',
+            'Clément Hougard',
+            'Elias Madi',
+            'Thi Tinh Vo',
+          ].map((name) => (
+            <li key={name}>
+              <span className="m-team-monogram" aria-hidden="true">
+                {name[0]}
+              </span>
+              <h3>{name}</h3>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section className="m-origin m-container">
         <div className="m-origin-illustration" aria-hidden="true">
           <div className="m-compass-ring m-ring-outer" />
