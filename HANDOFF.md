@@ -6,13 +6,13 @@ Where the project stands and what to do next. Written on 12 November 2026 at the
 
 ### Public website update — 12 November 2026
 
-The owner requested three frontend pages. They are implemented locally: product (`/`), Who we are (`/who-we-are`), and How it works (`/how-it-works`). The existing app is now at `/app`. This is the extension documented as step 10 in FEATURES.md. No model, database or hosting change was made, and no deployment was triggered.
+The owner requested three frontend pages. They are implemented and deployed: product (`/`), Who we are (`/who-we-are`), and How it works (`/how-it-works`). The existing app is now at `/app`. This is the extension documented as step 10 in FEATURES.md. No model, database or hosting service was changed. The website was first pushed to `build-v1` as `971f280`; following the owner's request to see the changes live, `main` was fast-forwarded to that commit and pushed, triggering Vercel production deployment.
 
 The design uses ivory and forest green, serif headings, a compass mark, and CSS/SVG product illustrations. Content follows README.md and the synthetic Tessel dataset; the About page and FAQ explain the mock provider. The How it works page has three interactive project examples and expandable FAQs. Public pages work without Supabase and load the workspace separately on demand.
 
 Implementation: `src/Website.tsx`, `src/marketing/Marketing.tsx`, `src/marketing/marketing.css`, and the explicit Vercel route rewrites in `vercel.json`. Navigation uses ordinary links without a new dependency. The original next steps about selecting an AI model remain open and require the owner's decision.
 
-**Step 10 done check: passed locally.** The production build and repository formatting check pass. A temporary Playwright script checked all three pages from 320 to 1440 pixels, active navigation, direct-link reloads, the mobile menu (including Escape), all three project examples, FAQs, and reaching the existing login screen at `/app` and returning home. Public-page requests made no external API calls; no browser runtime errors were observed. Desktop and mobile screenshots were visually reviewed. The stored Vercel rewrites still need verification on Vercel after publication. The authenticated database workflow was not repeated for this frontend change.
+**Step 10 done check: passed locally and deployed.** The production build and repository formatting check pass. A temporary Playwright script checked all three pages from 320 to 1440 pixels, active navigation, direct-link reloads, the mobile menu (including Escape), all three project examples, FAQs, and reaching the existing login screen at `/app` and returning home. Public-page requests made no external API calls; no browser runtime errors were observed. Desktop and mobile screenshots were visually reviewed. After publication, a fresh browser verified HTTP 200 and the correct rendered content at all three production URLs, an interactive project example, mobile navigation, and the demo link reaching the login screen at `/app`, with no browser runtime errors. This also verified the Vercel route rewrites. The authenticated database workflow was not repeated for this frontend change.
 
 All nine steps of [FEATURES.md](FEATURES.md) are built and their checks pass, with the **mock provider**. No AI model has been chosen.
 
@@ -21,7 +21,7 @@ All nine steps of [FEATURES.md](FEATURES.md) are built and their checks pass, wi
 | Live app | https://clavus.vercel.app (Vercel, deploys from `main` on every push) |
 | Hosted database and function | Supabase project `clavus`, ref `srhptjebvyvisauwesuu`, region Stockholm, free plan |
 | Demo login | `demo@clavus.example`; the password is `DEMO_USER_PASSWORD` in `.env.hosted` |
-| Code | `main` and `build-v1` on GitHub hold the same commits |
+| Code | `main` is production; `build-v1` holds the build branch. Check Git for current heads |
 
 The hosted project currently holds the synthetic dataset with stored verdicts for all 60 projects.
 
