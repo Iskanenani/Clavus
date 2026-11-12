@@ -68,16 +68,19 @@ function Workspace({ email }: { email: string }) {
   )
 
   return (
-    <>
+    <div className="workspace-shell">
       <header className="topbar">
         <div className="brand">
+          <img src="/favicon.svg" width="27" height="27" alt="" />
           <strong>Clavus</strong>
-          <span className="muted">{company.data?.name ?? ''}</span>
         </div>
-        <nav>
+        <p className="workspace-company">{company.data?.name ?? 'Workspace'}</p>
+        <span className="sidebar-label">Workspace</span>
+        <nav aria-label="Workspace navigation">
           {SCREENS.map((item) => (
             <button
               key={item.key}
+              aria-current={screen === item.key ? 'page' : undefined}
               className={screen === item.key ? 'tab active' : 'tab'}
               onClick={() => setScreen(item.key)}
             >
@@ -120,7 +123,7 @@ function Workspace({ email }: { email: string }) {
           </>
         )}
       </main>
-    </>
+    </div>
   )
 }
 

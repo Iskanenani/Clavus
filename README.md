@@ -111,5 +111,6 @@ Early prototype, built for a student consulting project.
 - [x] Accuracy test against the planted mismatches
 - [x] Deployment: https://clavus.vercel.app, on a hosted Supabase project
 - [x] Public product, Who we are, and How it works pages (deployed and verified at https://clavus.vercel.app)
+- [x] Attio design reference applied to the public pages and workspace, with local fonts and the team section preserved
 - [ ] Ready-made mappings for common trackers (later)
 - [ ] Live connections to trackers (later)

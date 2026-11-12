@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './marketing.css'
+import { ProductShowcase } from './ProductShowcase'
 
 export type PublicPage = 'product' | 'about' | 'how'
 
@@ -23,7 +24,7 @@ export function Compass({ className = '' }: { className?: string }) {
       />
       <path
         d="m20 12 2.5 5.5L28 20l-5.5 2.5L20 28l-2.5-5.5L12 20l5.5-2.5L20 12Z"
-        fill="var(--m-paper, #f8f8f2)"
+        fill="var(--m-paper, #ffffff)"
       />
     </svg>
   )
@@ -121,124 +122,6 @@ function Eyebrow({ children }: { children: string }) {
   )
 }
 
-function ProductPreview() {
-  return (
-    <div className="m-preview-scene">
-      <div className="m-preview-label">
-        <span>A little perspective changes everything.</span>
-        <span>↘</span>
-      </div>
-      <div
-        className="m-preview"
-        aria-label="Product illustration using Tessel's synthetic data"
-      >
-        <aside className="m-preview-rail" aria-hidden="true">
-          <Compass />
-          <span className="m-rail-active">▦</span>
-          <span>≡</span>
-          <span>↥</span>
-          <span className="m-rail-bottom">T</span>
-        </aside>
-        <div className="m-preview-content">
-          <div className="m-preview-top">
-            <span>
-              <b>Tessel</b>
-              <span className="m-preview-company"> / Strategy overview</span>
-            </span>
-            <span className="m-preview-live">
-              <i />
-              Demo
-            </span>
-          </div>
-          <div className="m-preview-heading">
-            <h2>Where the work is going</h2>
-            <span>All 5 teams</span>
-          </div>
-          <p className="m-preview-subtitle">
-            Your strategy, reflected in everyday work.
-          </p>
-          <div className="m-preview-stats">
-            <div>
-              <strong>60</strong>
-              <span>Projects reviewed</span>
-            </div>
-            <div>
-              <strong>494</strong>
-              <span>Work items</span>
-            </div>
-            <div>
-              <strong>5</strong>
-              <span>Strategic priorities</span>
-            </div>
-          </div>
-          <div className="m-map-heading">
-            <span>Share of work items</span>
-            <span>494 total</span>
-          </div>
-          <div
-            className="m-effort-bar"
-            role="img"
-            aria-label="271 work items serve a priority, 124 serve no stated priority, 67 contradict the strategy, and 32 are unclear."
-          >
-            <span style={{ flex: 271 }} />
-            <span style={{ flex: 124 }} />
-            <span style={{ flex: 67 }} />
-            <span style={{ flex: 32 }} />
-          </div>
-          <div className="m-map-legend">
-            <div>
-              <i className="m-dot-green" />
-              <span>Serves a priority</span>
-              <b>271</b>
-            </div>
-            <div>
-              <i className="m-dot-grey" />
-              <span>No stated priority</span>
-              <b>124</b>
-            </div>
-            <div>
-              <i className="m-dot-coral" />
-              <span>Contradicts strategy</span>
-              <b>67</b>
-            </div>
-            <div>
-              <i className="m-dot-gold" />
-              <span>Unclear</span>
-              <b>32</b>
-            </div>
-          </div>
-          <a href="/how-it-works#example" className="m-preview-flag">
-            <span className="m-flag-icon" aria-hidden="true">
-              ↗
-            </span>
-            <span>
-              <b>A project worth a conversation</b>
-              <small>France launch: Québec pilot</small>
-            </span>
-            <Arrow />
-          </a>
-          <div className="m-preview-bottom">
-            <span>
-              <span aria-hidden="true">✓</span> Every judgement has a reason.
-            </span>
-            <span>People make the call.</span>
-          </div>
-        </div>
-      </div>
-      <div className="m-preview-caption">
-        <span className="m-caption-line" />A product illustration, using our
-        fictional company, Tessel.
-      </div>
-      <span className="m-scene-cross m-cross-one" aria-hidden="true">
-        +
-      </span>
-      <span className="m-scene-cross m-cross-two" aria-hidden="true">
-        +
-      </span>
-    </div>
-  )
-}
-
 function ProductPage() {
   return (
     <>
@@ -246,9 +129,7 @@ function ProductPage() {
         <div className="m-hero-copy">
           <Eyebrow>Strategy, meet reality</Eyebrow>
           <h1>
-            Is the work
-            <br />
-            following
+            Is the work following
             <br />
             <em>your strategy?</em>
           </h1>
@@ -258,16 +139,16 @@ function ProductPage() {
           </p>
           <div className="m-hero-actions">
             <DemoLink />
-            <a className="m-text-link" href="/how-it-works">
+            <a className="m-secondary-button" href="/how-it-works">
               See how it works <Arrow diagonal />
             </a>
           </div>
           <p className="m-hero-note">
-            <span aria-hidden="true">↳</span> A clearer direction starts with a
-            better question.
+            <span aria-hidden="true">↳</span> Synthetic data. Human review. A
+            clearer picture.
           </p>
         </div>
-        <ProductPreview />
+        <ProductShowcase />
       </section>
 
       <section
@@ -551,7 +432,7 @@ const examples = [
     project: 'German checkout flow',
     team: 'Product Engineering',
     verdict: 'Serves a priority',
-    tone: 'green',
+    tone: 'blue',
     quote:
       'Win Germany and France: by the end of 2027, half of all new merchants should come from these two countries.',
     reason:
@@ -583,7 +464,11 @@ const examples = [
 ] as const
 
 function Example() {
-  const [selected, setSelected] = useState(1)
+  const [selected, setSelected] = useState(() =>
+    new URLSearchParams(window.location.search).get('example') === 'unclear'
+      ? 2
+      : 1,
+  )
   const example = examples[selected]
   return (
     <section className="m-example-section m-container" id="example">
@@ -754,7 +639,7 @@ function HowPage() {
             </p>
           </div>
           <div className="m-process-visual m-verdict-visual">
-            <span className="m-verdict m-verdict-green">
+            <span className="m-verdict m-verdict-blue">
               <i />
               Serves a priority
             </span>
@@ -906,25 +791,45 @@ function Closing() {
 
 function Footer() {
   return (
-    <footer className="m-footer m-container">
-      <div>
-        <Brand />
-        <p>A clearer view of where the work is going.</p>
-      </div>
-      <nav aria-label="Footer navigation">
-        {navigation.map((link) => (
-          <a href={link.href} key={link.page}>
-            {link.label}
+    <footer className="m-footer">
+      <div className="m-footer-content m-container">
+        <div>
+          <Brand />
+          <p>
+            A clearer view of where
+            <br />
+            the work is going.
+          </p>
+        </div>
+        <nav aria-label="Footer product navigation">
+          <span>Clavus</span>
+          {navigation.map((link) => (
+            <a href={link.href} key={link.page}>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <nav aria-label="Footer workflow navigation">
+          <span>The workflow</span>
+          <a href="/how-it-works#the-process">From strategy to work</a>
+          <a href="/how-it-works#example">Explore an example</a>
+          <a href="/who-we-are#team-heading">Meet the team</a>
+        </nav>
+        <nav aria-label="Footer workspace navigation">
+          <span>Try Clavus</span>
+          <a href="/app">
+            Open the demo <Arrow diagonal />
           </a>
-        ))}
-        <a href="/app">
-          Open the demo <Arrow diagonal />
-        </a>
-      </nav>
-      <div className="m-footer-bottom">
-        <span>© {new Date().getFullYear()} Clavus</span>
-        <span>Built with a direction in mind.</span>
-        <span>Student consulting project · Prototype</span>
+          <p>
+            Synthetic company.
+            <br />
+            Demo account required.
+          </p>
+        </nav>
+        <div className="m-footer-bottom">
+          <span>© {new Date().getFullYear()} Clavus</span>
+          <span>Student consulting project · Prototype</span>
+        </div>
       </div>
     </footer>
   )
@@ -936,6 +841,11 @@ export function Marketing({ page }: { page: PublicPage }) {
       <a href="#main-content" className="m-skip-link">
         Skip to content
       </a>
+      <div className="m-announcement">
+        <a href="/how-it-works">
+          Bring strategy and everyday work into the same picture. <Arrow />
+        </a>
+      </div>
       <Header page={page} />
       <main id="main-content">
         {page === 'product' ? (

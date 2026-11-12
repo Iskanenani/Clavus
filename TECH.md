@@ -88,6 +88,9 @@ How the rules in this document are enforced:
 | `src/screens/` | One file per screen: strategy, import, judge, map, project panel, review log |
 | `src/Website.tsx` | Selects the public page by URL; loads the existing workspace only at `/app` |
 | `src/marketing/` | The three public pages, shared navigation, product illustrations and responsive styles |
+| `DESIGN.md` | The Attio style reference copied from GradientDeck at the owner's request |
+| `src/design.css` | Shared design tokens and local font declarations for the website and workspace |
+| `public/fonts/` | Locally served open-source font subsets and their licenses |
 | `vercel.json` | Serves the Vite entry point for direct links to the public pages and workspace |
 | `src/lib/csv.ts` | Mapping a tracker's columns to the common format |
 | `supabase/migrations/` | Tables, access rules, triggers and the SQL behind the map |
@@ -102,7 +105,11 @@ The product page is at `/`, Who we are at `/who-we-are`, and How it works at `/h
 
 The authenticated app is now at `/app`, with a link back to the website. It is loaded with React's `lazy`, keeping Supabase and the chart library out of public-page requests. Public illustrations use fixed, labelled synthetic examples; no database or model request is made. The preview's work-item totals are manually checked against the synthetic CSVs: 271 serves, 124 none, 67 contradicts, 32 unclear (494 total). If that dataset changes, update the illustration too.
 
-Public styles are scoped under `.marketing` and use system fonts and SVG/CSS illustrations. No service or dependency was added.
+Public styles are scoped under `.marketing`. The website and workspace now follow the Attio reference from [GradientDeck](https://ui.gradientdeck.com/styles/attio/design.md), copied verbatim to `DESIGN.md`: white surfaces, near-black text, cobalt interactive accents, fine borders, compact controls, and a dark public footer. Muted red and amber remain reserved for contradiction and uncertainty data, not decorative accents. The product page uses a centered introduction and a large interactive illustration with alignment, strategy and review views.
+
+`src/design.css` defines the shared colors, typography and shadows. Inter is used for UI; Inter Tight and Source Serif 4 are the free display and quotation substitutes recommended by the reference. These are local Latin font subsets with licenses in `public/fonts/`; the browser makes no font-service requests. Serif type is reserved for strategy quotations. SVG/CSS product illustrations remain synthetic. No service or dependency was added.
+
+The authenticated workspace uses a light sidebar on desktop and horizontal navigation on mobile. The map's labels and spacing adapt to phones; its table uses short priority names and scrolls inside its card when needed. Its data queries, calculations, judging and review actions are unchanged.
 
 ## Alternatives considered
 

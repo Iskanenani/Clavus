@@ -4,11 +4,21 @@ Where the project stands and what to do next. Written on 12 November 2026 at the
 
 ## Where things stand
 
+### Attio design update — 12 November 2026
+
+The owner selected the Attio design from GradientDeck and requested that its `design.md` be copied and applied to the repository. The original reference is saved verbatim as `DESIGN.md`; source: https://ui.gradientdeck.com/styles/attio/design.md. This is step 11 in FEATURES.md.
+
+The design now uses a white canvas, near-black type, cobalt accents, fine borders, dark primary buttons, and a black public footer. Shared tokens and local font declarations are in `src/design.css`. The open-source substitutes named in the reference (Inter, Inter Tight and Source Serif 4) are served from `public/fonts/`, with licenses. Muted red/amber are used only for verdict meaning. No stack, model, service or database change was made.
+
+The centered product hero has a wide, interactive preview with Alignment map, Strategy reference and Human review views, implemented in `src/marketing/ProductShowcase.tsx`. All five team members remain on Who we are. The login and authenticated workspace use matching controls and typography, with a sidebar on desktop and horizontal navigation on mobile. The map adapts chart label widths and spacing to phones; its table uses short priority names and scrolls inside its card when needed.
+
+**Step 11 done check: passed locally.** Production build and formatting pass. Browser checks covered all public pages at 320–1440 pixels, the three showcase views, example switching, FAQs, navigation, the five exact team names, and local font loading. A read-only walkthrough against the hosted synthetic data verified login, the map and loaded project details, Strategy, Import, Judge and Review log, including mobile layouts. No company data, verdict, strategy or review was changed. No browser runtime errors were observed. Publishing uses the existing `main` → Vercel workflow.
+
 ### Public website update — 12 November 2026
 
 The owner requested three frontend pages. They are implemented and deployed: product (`/`), Who we are (`/who-we-are`), and How it works (`/how-it-works`). The existing app is now at `/app`. This is the extension documented as step 10 in FEATURES.md. No model, database or hosting service was changed. The website was first pushed to `build-v1` as `971f280`; following the owner's request to see the changes live, `main` was fast-forwarded to that commit and pushed, triggering Vercel production deployment.
 
-The design uses ivory and forest green, serif headings, a compass mark, and CSS/SVG product illustrations. Content follows README.md and the synthetic Tessel dataset; the About page and FAQ explain the mock provider. The How it works page has three interactive project examples and expandable FAQs. Public pages work without Supabase and load the workspace separately on demand.
+The initial design used ivory and forest green, serif headings, a compass mark, and CSS/SVG product illustrations; see the Attio update above for the current design. Content follows README.md and the synthetic Tessel dataset; the About page and FAQ explain the mock provider. The How it works page has three interactive project examples and expandable FAQs. Public pages work without Supabase and load the workspace separately on demand.
 
 The Who we are page also includes an Our team section listing the five names supplied by the owner: Oscar de Froissard de Broissia, Gabrielle de Larminat, Clément Hougard, Elias Madi, and Thi Tinh Vo. It uses letter monograms and a responsive list, without adding roles or biographies.
 
@@ -80,6 +90,6 @@ These cost time in the first session.
 ## Known gaps
 
 - No automated browser tests in the repository.
-- The JavaScript bundle is about 800 kB (Recharts). Fine for a demo; code-splitting would cut it.
+- The workspace JavaScript chunk is about 584 kB (largely Recharts) and triggers Vite's size warning. It is loaded only at `/app`; the public pages have a separate bundle.
 - A project is assumed to belong to one team. If its items name several, the first alphabetically is used.
 - The mock provider only knows the synthetic projects. Importing any other file and judging it gives an error per project until a real model is set.

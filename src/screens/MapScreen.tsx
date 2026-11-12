@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   Bar,
   BarChart,
@@ -20,11 +20,11 @@ import {
 import { ProjectPanel } from './ProjectPanel'
 
 const COLORS: Record<MapRow['kind'], string> = {
-  priority: '#2f6fed',
-  none: '#8b95a5',
-  contradicts: '#d64545',
-  unclear: '#e0a020',
-  'not-judged': '#d5dae2',
+  priority: '#266df0',
+  none: '#b5bdc9',
+  contradicts: '#b96969',
+  unclear: '#b79749',
+  'not-judged': '#e4e7ec',
 }
 
 // Everything the map shows, for one team or for all. The totals come
@@ -75,6 +75,16 @@ function inBucket(
 }
 
 export function MapScreen({ goTo }: { goTo: GoTo }) {
+  const [compact, setCompact] = useState(
+    () => window.matchMedia('(max-width: 680px)').matches,
+  )
+  // Leave room for the bars and percentages when labels are on a phone.
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 680px)')
+    const update = () => setCompact(query.matches)
+    query.addEventListener('change', update)
+    return () => query.removeEventListener('change', update)
+  }, [])
   const [selectedTeam, setTeam] = useState('')
   const [bucket, setBucket] = useState<string | null>(null)
   const [openProject, setOpenProject] = useState<string | null>(null)
@@ -176,86 +186,97 @@ export function MapScreen({ goTo }: { goTo: GoTo }) {
           Share of the {totalItems} work items{team ? ` of ${team}` : ''}, by
           what their project is for. Click a bar to see its projects.
         </p>
-        <ResponsiveContainer width="100%" height={chartRows.length * 44 + 20}>
-          <BarChart
-            data={chartRows}
-            layout="vertical"
-            margin={{ left: 8, right: 56 }}
-          >
-            <XAxis type="number" hide domain={[0, 'dataMax']} />
-            <YAxis
-              type="category"
-              dataKey="name"
-              width={250}
-              tickLine={false}
-              axisLine={false}
-              tick={{ fontSize: 13, fill: '#1c2530' }}
-            />
-            <Bar
-              dataKey="share"
-              radius={4}
-              minPointSize={3}
-              isAnimationActive={false}
-              cursor="pointer"
-              onClick={(entry) =>
-                setBucket((entry as unknown as MapRow).bucket)
-              }
+        <div className="scroll">
+          <div className="chart-canvas">
+            <ResponsiveContainer
+              width="100%"
+              height={chartRows.length * (compact ? 52 : 44) + 20}
             >
-              {chartRows.map((row) => (
-                <Cell
-                  key={row.bucket}
-                  fill={COLORS[row.kind]}
-                  opacity={bucket && bucket !== row.bucket ? 0.45 : 1}
-                />
-              ))}
-              <LabelList
-                dataKey="share"
-                position="right"
-                formatter={(value) => `${value}%`}
-                style={{ fontSize: 13, fill: '#1c2530' }}
-              />
-            </Bar>
-          </BarChart>
-        </ResponsiveContainer>
-
-        <table>
-          <thead>
-            <tr>
-              <th>What the work is for</th>
-              <th className="num">Projects</th>
-              <th className="num">Items</th>
-              <th className="num">Share</th>
-              {team && <th className="num">Effort</th>}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row) => (
-              <tr
-                key={row.bucket}
-                className={
-                  row.bucket === bucket ? 'clickable selected' : 'clickable'
-                }
-                onClick={() => setBucket(row.bucket)}
+              <BarChart
+                data={chartRows}
+                layout="vertical"
+                margin={{ left: compact ? 0 : 8, right: compact ? 42 : 56 }}
               >
-                <td>
-                  <span
-                    className="dot"
-                    style={{ background: COLORS[row.kind] }}
+                <XAxis type="number" hide domain={[0, 'dataMax']} />
+                <YAxis
+                  type="category"
+                  dataKey="name"
+                  width={compact ? 140 : 250}
+                  tickLine={false}
+                  axisLine={false}
+                  tick={{ fontSize: compact ? 11 : 13, fill: '#1c1d1f' }}
+                />
+                <Bar
+                  dataKey="share"
+                  radius={4}
+                  minPointSize={3}
+                  isAnimationActive={false}
+                  cursor="pointer"
+                  onClick={(entry) =>
+                    setBucket((entry as unknown as MapRow).bucket)
+                  }
+                >
+                  {chartRows.map((row) => (
+                    <Cell
+                      key={row.bucket}
+                      fill={COLORS[row.kind]}
+                      opacity={bucket && bucket !== row.bucket ? 0.45 : 1}
+                    />
+                  ))}
+                  <LabelList
+                    dataKey="share"
+                    position="right"
+                    formatter={(value) => `${value}%`}
+                    style={{ fontSize: compact ? 11 : 13, fill: '#1c1d1f' }}
                   />
-                  {row.label}
-                </td>
-                <td className="num">{row.projects}</td>
-                <td className="num">{row.items}</td>
-                <td className="num">{row.share}%</td>
-                {team && (
-                  <td className="num">
-                    {row.effort ?? 0} {row.effort_unit ?? ''}
-                  </td>
-                )}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        <div className="scroll">
+          <table className="map-table">
+            <thead>
+              <tr>
+                <th>What the work is for</th>
+                <th className="num">Projects</th>
+                <th className="num">Items</th>
+                <th className="num">Share</th>
+                {team && <th className="num">Effort</th>}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {rows.map((row) => (
+                <tr
+                  key={row.bucket}
+                  className={
+                    row.bucket === bucket ? 'clickable selected' : 'clickable'
+                  }
+                  onClick={() => setBucket(row.bucket)}
+                >
+                  <td>
+                    <span
+                      className="dot"
+                      style={{ background: COLORS[row.kind] }}
+                    />
+                    {row.kind === 'priority'
+                      ? shortLabel(row.label)
+                      : row.label}
+                  </td>
+                  <td className="num">{row.projects}</td>
+                  <td className="num">{row.items}</td>
+                  <td className="num">{row.share}%</td>
+                  {team && (
+                    <td className="num">
+                      {row.effort ?? 0} {row.effort_unit ?? ''}
+                    </td>
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         {!team && (
           <p className="muted small">
             Teams are compared by number of items because they measure effort in

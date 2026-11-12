@@ -20,14 +20,18 @@ export function Login() {
   }
 
   return (
-    <main className="page narrow">
-      <h1>Clavus</h1>
-      <p className="lead">Is the work following the strategy?</p>
+    <main className="page narrow login-page">
+      <img src="/favicon.svg" width="42" height="42" alt="" />
+      <h1>Welcome to Clavus</h1>
+      <p className="lead">A clearer view of where the work is going.</p>
       <form className="card stack" onSubmit={logIn}>
+        <h2>Open your workspace</h2>
+        <p className="muted small">Sign in with your demo account.</p>
         <label>
           Email
           <input
             type="email"
+            autoComplete="username"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -37,6 +41,7 @@ export function Login() {
           Password
           <input
             type="password"
+            autoComplete="current-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required

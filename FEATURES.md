@@ -181,6 +181,12 @@ This is the proof shown to the jury.
 
 **Done when:** all three pages work without a database connection, their navigation and direct URLs work, the layout fits mobile and desktop, interactive examples and FAQs work, and the demo links reach the existing login screen. The production build and formatting checks pass. Local verification completes this step; publishing remains a separate action.
 
+### Step 11. Apply the selected design reference (owner-requested extension)
+
+**Build:** copy Attio's GradientDeck `design.md` into `DESIGN.md` and apply its palette, typography, controls, product presentation and footer to the existing website and workspace. Preserve the three pages, all five team members, synthetic examples and existing application behavior. Use the reference's free font substitutes, served locally with their licenses.
+
+**Done when:** the production build and formatting check pass; all public pages and product-example interactions work on desktop and mobile; a signed-in read-only walkthrough loads the map, project details, strategy, import, judging and review log; the team list remains intact; and no new service, model or database change is required.
+
 ## Not in version 1
 
 - Ready-made mappings for specific trackers.
