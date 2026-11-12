@@ -4,6 +4,14 @@ Where the project stands and what to do next. Written on 12 November 2026 at the
 
 ## Where things stand
 
+### Strategy usability refinement — 12 November 2026
+
+The owner found that the Strategy screen still looked like a form after the first design pass. Step 12 in FEATURES.md rebuilds it as a readable reference: company direction, numbered priority cards, a non-goal sidebar, counts and validation status. Editing, creation and deletion controls appear on demand. Validation warnings appear inside editors before saving. Failed writes keep the draft; new reference names are generated, and existing identifiers are preserved. No database or model change was made.
+
+The workspace now aligns beside the sidebar on wide screens, with navigation icons, a company identity block and breadcrumbs. `src/workspace.css` is loaded with the app; public-page styling is unaffected. Contextual editing lives in `src/screens/StrategyScreen.tsx` and icons in `src/components/WorkspaceIcon.tsx`.
+
+**Step 12 done check: passed locally.** The production build and formatting pass. Browser checks cover every workspace screen at 320–2048 pixels, all three public pages, the default five priorities and three non-goals, contextual editing, focus return after cancellation and navigation back to the map. A separate interaction check intercepts every write and exercises cancel, the validation warning, failure/draft retention, priority and overview saves, validation, adding/deleting a temporary priority, non-goal cancellation, empty-state creation and validation with no priorities. These checks do not change hosted company data. Production publishing remains the existing `main` → Vercel flow.
+
 ### Attio design update — 12 November 2026
 
 The owner selected the Attio design from GradientDeck and requested that its `design.md` be copied and applied to the repository. The original reference is saved verbatim as `DESIGN.md`; source: https://ui.gradientdeck.com/styles/attio/design.md. This is step 11 in FEATURES.md.
@@ -90,6 +98,6 @@ These cost time in the first session.
 ## Known gaps
 
 - No automated browser tests in the repository.
-- The workspace JavaScript chunk is about 584 kB (largely Recharts) and triggers Vite's size warning. It is loaded only at `/app`; the public pages have a separate bundle.
+- The workspace JavaScript chunk is about 592 kB (largely Recharts) and triggers Vite's size warning. It is loaded only at `/app`; the public pages have a separate bundle.
 - A project is assumed to belong to one team. If its items name several, the first alphabetically is used.
 - The mock provider only knows the synthetic projects. Importing any other file and judging it gives an error per project until a real model is set.

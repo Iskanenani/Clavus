@@ -90,6 +90,8 @@ How the rules in this document are enforced:
 | `src/marketing/` | The three public pages, shared navigation, product illustrations and responsive styles |
 | `DESIGN.md` | The Attio style reference copied from GradientDeck at the owner's request |
 | `src/design.css` | Shared design tokens and local font declarations for the website and workspace |
+| `src/workspace.css` | Workspace layout, navigation and the strategy reference; loaded with the authenticated app |
+| `src/components/WorkspaceIcon.tsx` | Small shared SVG icons for workspace navigation and editing |
 | `public/fonts/` | Locally served open-source font subsets and their licenses |
 | `vercel.json` | Serves the Vite entry point for direct links to the public pages and workspace |
 | `src/lib/csv.ts` | Mapping a tracker's columns to the common format |
@@ -110,6 +112,8 @@ Public styles are scoped under `.marketing`. The website and workspace now follo
 `src/design.css` defines the shared colors, typography and shadows. Inter is used for UI; Inter Tight and Source Serif 4 are the free display and quotation substitutes recommended by the reference. These are local Latin font subsets with licenses in `public/fonts/`; the browser makes no font-service requests. Serif type is reserved for strategy quotations. SVG/CSS product illustrations remain synthetic. No service or dependency was added.
 
 The authenticated workspace uses a light sidebar on desktop and horizontal navigation on mobile. The map's labels and spacing adapt to phones; its table uses short priority names and scrolls inside its card when needed. Its data queries, calculations, judging and review actions are unchanged.
+
+The strategy screen opens as a readable reference, with company direction, numbered priority cards, non-goals and validation status. Contextual editors expose one statement at a time; successful saves close them, while failed saves keep the draft and show the error. New reference names are generated from the statement; existing names and IDs are preserved. The database still withdraws validation and flags judgements when the strategy changes. The saving warning is shown inside an open editor rather than above the entire reference. Workspace content aligns beside the sidebar on wide screens, with a breadcrumb and navigation icons shared by every screen.
 
 ## Alternatives considered
 

@@ -9,6 +9,8 @@ import { ImportScreen } from './screens/ImportScreen'
 import { JudgeScreen } from './screens/JudgeScreen'
 import { LogScreen } from './screens/LogScreen'
 import { ResetDemo } from './screens/ResetDemo'
+import { WorkspaceIcon } from './components/WorkspaceIcon'
+import './workspace.css'
 
 const SCREENS = [
   { key: 'map', label: 'Map' },
@@ -74,7 +76,15 @@ function Workspace({ email }: { email: string }) {
           <img src="/favicon.svg" width="27" height="27" alt="" />
           <strong>Clavus</strong>
         </div>
-        <p className="workspace-company">{company.data?.name ?? 'Workspace'}</p>
+        <div className="workspace-company">
+          <span className="workspace-company-avatar" aria-hidden="true">
+            {company.data?.name.charAt(0) ?? 'C'}
+          </span>
+          <div>
+            <strong>{company.data?.name ?? 'Workspace'}</strong>
+            <span>Demo workspace</span>
+          </div>
+        </div>
         <span className="sidebar-label">Workspace</span>
         <nav aria-label="Workspace navigation">
           {SCREENS.map((item) => (
@@ -84,6 +94,7 @@ function Workspace({ email }: { email: string }) {
               className={screen === item.key ? 'tab active' : 'tab'}
               onClick={() => setScreen(item.key)}
             >
+              <WorkspaceIcon name={item.key} />
               {item.label}
             </button>
           ))}
@@ -105,6 +116,12 @@ function Workspace({ email }: { email: string }) {
       </header>
 
       <main className="page" key={dataVersion}>
+        <div className="workspace-breadcrumb">
+          <span>Workspace</span>
+          <WorkspaceIcon name="chevron" />
+          <span>{SCREENS.find((item) => item.key === screen)?.label}</span>
+          <span className="workspace-demo-label">Synthetic company data</span>
+        </div>
         {company.error && (
           <p className="error">Could not load the company: {company.error}</p>
         )}
@@ -116,7 +133,7 @@ function Workspace({ email }: { email: string }) {
         {company.data && (
           <>
             {screen === 'map' && <MapScreen goTo={setScreen} />}
-            {screen === 'strategy' && <StrategyScreen />}
+            {screen === 'strategy' && <StrategyScreen goTo={setScreen} />}
             {screen === 'import' && <ImportScreen goTo={setScreen} />}
             {screen === 'judge' && <JudgeScreen goTo={setScreen} />}
             {screen === 'log' && <LogScreen />}

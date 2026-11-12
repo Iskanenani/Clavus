@@ -187,6 +187,12 @@ This is the proof shown to the jury.
 
 **Done when:** the production build and formatting check pass; all public pages and product-example interactions work on desktop and mobile; a signed-in read-only walkthrough loads the map, project details, strategy, import, judging and review log; the team list remains intact; and no new service, model or database change is required.
 
+### Step 12. Make the strategy screen a usable reference (owner-requested refinement)
+
+**Build:** present the strategy as readable company direction, numbered priority cards, and explicit non-goals. Show validation status and counts, with editing controls opened on demand. Keep draft text after failed saves, explain the effect on validation inside editors, and preserve existing database rules. Improve workspace navigation, text size and placement on wide and narrow screens.
+
+**Done when:** the default view has no form fields; all priorities and non-goals remain visible; edit, add, cancel, save, delete and validation flows work; failed saves preserve drafts; validation requires a priority; mobile and wide-screen layouts fit; and build and formatting checks pass. Exercise write flows with intercepted requests so the hosted demo dataset is not changed by UI verification.
+
 ## Not in version 1
 
 - Ready-made mappings for specific trackers.
