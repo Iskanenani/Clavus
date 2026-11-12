@@ -1,12 +1,14 @@
 # Instructions for coding agents
 
-Clavus is an early prototype that shows company leaders whether the work being done follows the strategy they set. The repository currently holds documentation only, and your job is to build the product described in it.
+Clavus is an early prototype that shows company leaders whether the work being done follows the strategy they set. Version 1 is built and deployed; your job is to continue from where [HANDOFF.md](HANDOFF.md) says the work stopped.
 
 ## Read these first, in this order
 
 1. [README.md](README.md): what Clavus is and why it exists.
 2. [TECH.md](TECH.md): the stack, how the pieces connect, and why each was chosen.
 3. [FEATURES.md](FEATURES.md): what to build, in what order, and the check that ends each step.
+
+4. [HANDOFF.md](HANDOFF.md): where the last session stopped, what comes next, and notes about this machine.
 
 FEATURES.md is the plan. If it conflicts with anything you would otherwise assume, follow it.
 
